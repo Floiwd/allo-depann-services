@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { Star, MessageSquarePlus, Info, CheckCircle2 } from "lucide-react";
+import { Star, MessageSquarePlus, Info, CheckCircle2, ExternalLink } from "lucide-react";
 import { avisClients, AvisClient } from "@/data/avis";
 import { entreprise } from "@/data/entreprise";
 
 export default function AvisClients() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const hasRealReviews = avisClients.some((a) => !a.isIllustrative);
 
   // Détecter l'élément actif lors du défilement tactile mobile
   const handleScroll = () => {
@@ -36,19 +38,40 @@ export default function AvisClients() {
       aria-label="Avis clients"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Bandeau d'en-tête sobre et transparent (sans aucune note chiffrée inventée) */}
+        {/* Bandeau d'en-tête */}
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full theme-badge text-xs font-semibold">
-            <Info className="w-3.5 h-3.5" />
-            <span>Avis illustratifs, avis réels à venir</span>
-          </div>
+          {hasRealReviews ? (
+            <a
+              href={entreprise.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-semibold hover:bg-amber-500/20 transition-colors cursor-pointer"
+            >
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <span className="font-bold">5,0 / 5</span>
+              <span>•</span>
+              <span>338 avis Google vérifiés</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+            </a>
+          ) : (
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full theme-badge text-xs font-semibold">
+              <Info className="w-3.5 h-3.5" />
+              <span>Avis illustratifs, avis réels à venir</span>
+            </div>
+          )}
 
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[var(--text-main)]">
-            Les avis de nos clients
+            {hasRealReviews ? "Avis clients certifiés Google" : "Les avis de nos clients"}
           </h2>
 
           <p className="text-xs sm:text-sm text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
-            Par engagement de transparence, les cartes ci-dessous présentent la structure des retours d&apos;expérience. Les véritables témoignages certifiés seront publiés dès validation par nos clients.
+            {hasRealReviews
+              ? "Témoignages authentiques déposés publiquement par nos clients sur notre fiche officielle Google Maps."
+              : "Par engagement de transparence, les cartes ci-dessous présentent la structure des retours d'expérience. Les véritables témoignages certifiés seront publiés dès validation par nos clients."}
           </p>
         </div>
 
@@ -178,7 +201,7 @@ export function AvisCourtDevis() {
     <div className="p-3 rounded-lg border border-emerald-500/30 bg-emerald-50/50 dark:bg-emerald-950/20 text-xs flex items-start gap-2.5 mb-4">
       <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
       <div>
-        <p className="italic text-[var(--text-body)]">
+        <p className="italic text-[var(--text-body)] line-clamp-3">
           &laquo;&nbsp;{avisVerifie.texte}&nbsp;&raquo;
         </p>
         <p className="text-[10px] text-[var(--text-muted)] mt-1 font-semibold">

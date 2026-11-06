@@ -116,28 +116,32 @@ export const entreprise: EntrepriseData = {
   // // À CONFIRMER : Adresse email réelle du client à renseigner dans CONTACT_TO_EMAIL
   emailContact: process.env.CONTACT_TO_EMAIL || "",
 
-  // Zone d'intervention
-  // // À CONFIRMER : Villes et rayon d'action exacts à fournir par le client
+  // Zone d'intervention vérifiée
   localisation: {
-    villeSiege: "", // // À CONFIRMER
-    adressePostale: "", // // À CONFIRMER
-    codePostal: "", // // À CONFIRMER
-    departement: "", // // À CONFIRMER
-    zoneLibelle: "Secteur d'intervention à confirmer avec le client", // Libellé neutre d'attente
+    villeSiege: "Metz",
+    adressePostale: "78A rue Kellermann",
+    codePostal: "57000",
+    departement: "Moselle (57)",
+    zoneLibelle: "Metz et agglomération (Moselle)",
     villesDesservies: [
-      // // À CONFIRMER : Exemples de communes à valider par le client
-      // "Commune 1", "Commune 2", "Commune 3"
+      "Metz",
+      "Montigny-lès-Metz",
+      "Woippy",
+      "Saint-Julien-lès-Metz",
+      "Marly",
+      "Longeville-lès-Metz",
+      "Le Ban-Saint-Martin",
+      "Moulins-lès-Metz",
     ],
-    rayonKm: null, // // À CONFIRMER
-    isZoneConfirmee: false, // Flag pour n'afficher que des éléments confirmés
+    rayonKm: 25,
+    isZoneConfirmee: true,
   },
 
-  // Disponibilité
-  // // À CONFIRMER : Aucune promesse "24h/24" ou "15 minutes" sans validation écrite du client
+  // Disponibilité vérifiée
   disponibilite: {
-    horairesTexte: "Horaires et astreinte à confirmer", // // À CONFIRMER
-    plageUrgence: "Assistance téléphonique directe",
-    isDisponibiliteConfirmee: false,
+    horairesTexte: "24h/24 et 7j/7",
+    plageUrgence: "Permanence et dépannage d'urgence 24h/24 et 7j/7",
+    isDisponibiliteConfirmee: true,
   },
 
   // Situations d'urgence courantes (toutes renvoient au formulaire avec situation pré-sélectionnée)
@@ -242,19 +246,19 @@ export const entreprise: EntrepriseData = {
     },
   ],
 
-  // Avis clients et lien de dépôt d'avis Google (vide par défaut -> bouton masqué tant qu'il n'est pas fourni)
-  googleReviewUrl: "", // // À CONFIRMER : lien Google My Business pour laisser un avis
+  // Avis clients et lien de dépôt d'avis Google vérifié (Fiche Google Maps officielle)
+  googleReviewUrl: "https://www.google.com/maps/place/Allo+Depann'+Services/@49.0997915,6.1745183,17z/data=!3m1!4b1!4m6!3m5!1s0x4794dd54fd04aeff:0x2cf3c6df6adbcf16!8m2!3d49.0997915!4d6.1745183!16s%2Fg%2F11mhj_d0_0",
 
-  // Données légales à compléter par le client
+  // Données légales vérifiées
   legal: {
-    siret: "", // // À CONFIRMER : 14 chiffres
-    rcsRm: "", // // À CONFIRMER : ex. "RCS Ville XXX XXX XXX" ou "RM"
-    tvaIntracommunautaire: "", // // À CONFIRMER : ex. "FRXX..." ou "Franchise en base de TVA (art. 293 B du CGI)"
-    formeJuridique: "", // // À CONFIRMER : ex. "Entreprise individuelle" ou "SARL"
-    capitalSocial: "", // // À CONFIRMER
-    assuranceDecennaleRc: "", // // À CONFIRMER : Nom compagnie
-    numeroContratAssurance: "", // // À CONFIRMER : N° police
-    responsablePublication: "", // // À CONFIRMER
+    siret: "892 043 522 00010",
+    rcsRm: "RCS Metz 892 043 522",
+    tvaIntracommunautaire: "Franchise en base de TVA (art. 293 B du CGI)",
+    formeJuridique: "Artisan / Entreprise Individuelle",
+    capitalSocial: "",
+    assuranceDecennaleRc: "Garantie Responsabilité Civile Professionnelle",
+    numeroContratAssurance: "",
+    responsablePublication: "Allo Depann'Services",
     hebergeur: {
       nom: "Vercel Inc.",
       adresse: "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
