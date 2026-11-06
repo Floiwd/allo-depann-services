@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%" fill="none">
+  <rect width="400" height="300" fill="#f8fafc" rx="8"/>
+  <rect x="20" y="20" width="360" height="260" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4" rx="6"/>
+  <!-- Door frame and latch technical blueprint -->
+  <rect x="130" y="50" width="140" height="200" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="145" y="65" width="110" height="85" rx="2" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="145" y="160" width="110" height="75" rx="2" stroke="#cbd5e1" stroke-width="1.5"/>
+  <!-- Door handle & latch mechanism -->
+  <circle cx="160" cy="148" r="5" fill="#64748b"/>
+  <rect x="155" y="145" width="32" height="6" rx="3" fill="#64748b"/>
+  <path d="M260 142 L275 142 L280 148 L275 154 L260 154 Z" fill="#94a3b8" stroke="#64748b" stroke-width="1.5"/>
+  <!-- Radio / bypass card line indicating non-destructive opening -->
+  <path d="M272 110 C272 130 274 150 264 165" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="200" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" font-weight="500">SCHÉMA TECHNIQUE — PORTE CLAQUÉE NON VERROUILLÉE</text>
+</svg>

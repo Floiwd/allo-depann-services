@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%" fill="none">
+  <rect width="400" height="300" fill="#f8fafc" rx="8"/>
+  <rect x="20" y="20" width="360" height="260" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4" rx="6"/>
+  <!-- Door frame & strike plate reinforcement blueprint -->
+  <g transform="translate(130, 50)">
+    <rect x="0" y="0" width="140" height="180" rx="4" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <!-- Strike plate -->
+    <rect x="110" y="30" width="18" height="120" rx="2" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+    <circle cx="119" cy="45" r="3" fill="#64748b"/>
+    <circle cx="119" cy="135" r="3" fill="#64748b"/>
+    <!-- Security shield badge -->
+    <path d="M50 70 L70 60 L90 70 L90 100 C90 115 70 125 70 125 C70 125 50 115 50 100 Z" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+    <path d="M62 92 L68 98 L78 86" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="200" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" font-weight="500">SCHÉMA TECHNIQUE — MISE EN SÉCURITÉ ET FERMETURE PROVISOIRE</text>
+</svg>

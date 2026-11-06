@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@layer base {
+  :root,
+  html[data-theme="urgence"] {
+    --bg-page: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #ffffff;
+    --bg-header: rgba(255, 255, 255, 0.94);
+    --text-main: #0f172a;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --border-subtle: #e2e8f0;
+    --border-strong: #cbd5e1;
+    --accent-call: #dc2626;
+    --accent-call-hover: #b91c1c;
+    --accent-call-text: #ffffff;
+    --accent-badge-bg: #fef2f2;
+    --accent-badge-border: #fecaca;
+    --accent-badge-text: #991b1b;
+    --secondary-btn-bg: #ffffff;
+    --secondary-btn-border: #cbd5e1;
+    --secondary-btn-text: #0f172a;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --radius-card: 0.75rem;
+    --radius-btn: 0.5rem;
+    --font-heading-tracking: -0.025em;
+    --color-scheme: light;
+  }
+
+  html[data-theme="sobre"] {
+    --bg-page: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #f1f5f9;
+    --bg-header: rgba(248, 250, 252, 0.94);
+    --text-main: #0f172a;
+    --text-body: #1e293b;
+    --text-muted: #64748b;
+    --border-subtle: #e2e8f0;
+    --border-strong: #94a3b8;
+    --accent-call: #0284c7;
+    --accent-call-hover: #0369a1;
+    --accent-call-text: #ffffff;
+    --accent-badge-bg: #f0f9ff;
+    --accent-badge-border: #bae6fd;
+    --accent-badge-text: #0369a1;
+    --secondary-btn-bg: #ffffff;
+    --secondary-btn-border: #94a3b8;
+    --secondary-btn-text: #0f172a;
+    --card-shadow: 0 2px 4px 0 rgba(15, 23, 42, 0.04);
+    --card-shadow-hover: 0 8px 16px -2px rgba(15, 23, 42, 0.08);
+    --radius-card: 0.5rem;
+    --radius-btn: 0.375rem;
+    --font-heading-tracking: -0.015em;
+    --color-scheme: light;
+  }
+
+  html[data-theme="moderne"] {
+    --bg-page: #ffffff;
+    --bg-surface: #fafafa;
+    --bg-surface-elevated: #ffffff;
+    --bg-header: rgba(255, 255, 255, 0.96);
+    --text-main: #09090b;
+    --text-body: #27272a;
+    --text-muted: #71717a;
+    --border-subtle: #e4e4e7;
+    --border-strong: #18181b;
+    --accent-call: #18181b;
+    --accent-call-hover: #27272a;
+    --accent-call-text: #ffffff;
+    --accent-badge-bg: #f4f4f5;
+    --accent-badge-border: #d4d4d8;
+    --accent-badge-text: #18181b;
+    --secondary-btn-bg: #ffffff;
+    --secondary-btn-border: #18181b;
+    --secondary-btn-text: #09090b;
+    --card-shadow: none;
+    --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --radius-card: 0.25rem;
+    --radius-btn: 0.25rem;
+    --font-heading-tracking: -0.035em;
+    --color-scheme: light;
+  }
+
+  html[data-theme="sombre"] {
+    --bg-page: #0c0d10;
+    --bg-surface: #14171d;
+    --bg-surface-elevated: #1a1e26;
+    --bg-header: rgba(12, 13, 16, 0.94);
+    --text-main: #f4f4f5;
+    --text-body: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(212, 175, 55, 0.4);
+    --accent-call: #d4af37;
+    --accent-call-hover: #c59b27;
+    --accent-call-text: #090a0d;
+    --accent-badge-bg: rgba(212, 175, 55, 0.12);
+    --accent-badge-border: rgba(212, 175, 55, 0.35);
+    --accent-badge-text: #f0d57e;
+    --secondary-btn-bg: #14171d;
+    --secondary-btn-border: rgba(255, 255, 255, 0.15);
+    --secondary-btn-text: #f4f4f5;
+    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    --card-shadow-hover: 0 10px 30px -4px rgba(212, 175, 55, 0.15);
+    --radius-card: 0.75rem;
+    --radius-btn: 0.5rem;
+    --font-heading-tracking: -0.02em;
+    --color-scheme: dark;
+  }
+
+  html[data-theme="chaleureux"] {
+    --bg-page: #fdfbf7;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #f7efe4;
+    --bg-header: rgba(253, 251, 247, 0.94);
+    --text-main: #2b211a;
+    --text-body: #4a3b32;
+    --text-muted: #786457;
+    --border-subtle: #ebdcd0;
+    --border-strong: #cbb4a3;
+    --accent-call: #c2410c;
+    --accent-call-hover: #9a3412;
+    --accent-call-text: #ffffff;
+    --accent-badge-bg: #fff7ed;
+    --accent-badge-border: #fed7aa;
+    --accent-badge-text: #9a3412;
+    --secondary-btn-bg: #ffffff;
+    --secondary-btn-border: #cbb4a3;
+    --secondary-btn-text: #2b211a;
+    --card-shadow: 0 4px 14px -2px rgba(74, 59, 50, 0.06);
+    --card-shadow-hover: 0 12px 24px -4px rgba(74, 59, 50, 0.1);
+    --radius-card: 1.25rem;
+    --radius-btn: 9999px;
+    --font-heading-tracking: -0.015em;
+    --color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-body);
+    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+}
+
+.theme-surface {
+  background-color: var(--bg-surface);
+  border-color: var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-surface:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.theme-btn-call {
+  background-color: var(--accent-call);
+  color: var(--accent-call-text);
+  border-radius: var(--radius-btn);
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.theme-btn-call:hover {
+  background-color: var(--accent-call-hover);
+  transform: translateY(-1px);
+}
+
+.theme-btn-call:active {
+  transform: translateY(0);
+}
+
+.theme-btn-secondary {
+  background-color: var(--secondary-btn-bg);
+  border: 1px solid var(--secondary-btn-border);
+  color: var(--secondary-btn-text);
+  border-radius: var(--radius-btn);
+  transition: all 0.15s ease;
+}
+
+.theme-btn-secondary:hover {
+  border-color: var(--text-main);
+  background-color: var(--bg-surface-elevated);
+}
+
+.theme-badge {
+  background-color: var(--accent-badge-bg);
+  border: 1px solid var(--accent-badge-border);
+  color: var(--accent-badge-text);
+  border-radius: var(--radius-btn);
+}

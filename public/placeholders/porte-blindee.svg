@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%" fill="none">
+  <rect width="400" height="300" fill="#f8fafc" rx="8"/>
+  <rect x="20" y="20" width="360" height="260" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4" rx="6"/>
+  <!-- Armored door and multi-point locking blueprint -->
+  <g transform="translate(130, 40)">
+    <!-- Steel door leaf -->
+    <rect x="0" y="0" width="140" height="200" rx="3" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+    <rect x="10" y="10" width="120" height="180" rx="2" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <!-- Multi-point deadbolts (top, middle, bottom) -->
+    <rect x="135" y="25" width="15" height="12" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1.5"/>
+    <rect x="135" y="95" width="18" height="16" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1.5"/>
+    <rect x="135" y="165" width="15" height="12" rx="2" fill="#475569" stroke="#0f172a" stroke-width="1.5"/>
+    <!-- Armored core shield -->
+    <circle cx="70" cy="103" r="18" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+    <circle cx="70" cy="103" r="6" fill="#334155"/>
+  </g>
+  <text x="200" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" font-weight="500">SCHÉMA TECHNIQUE — BLOC-PORTE BLINDÉ & MULTIPOINTS</text>
+</svg>
