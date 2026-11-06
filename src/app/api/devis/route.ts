@@ -62,11 +62,11 @@ const devisSchema = z.object({
     .min(2, "Veuillez sélectionner la situation d'urgence rencontrée.")
     .max(100),
   urgence: z.enum(["maintenant", "aujourdhui", "planifie"], {
-    error: "Veuillez préciser le degré d'urgence.",
+    message: "Veuillez préciser le degré d'urgence.",
   }),
   message: z.string().max(1000, "Message trop long.").optional().or(z.literal("")),
   consentement: z.literal(true, {
-    error: "Vous devez accepter le traitement de vos coordonnées pour être recontacté.",
+    message: "Vous devez accepter le traitement de vos coordonnées pour être recontacté.",
   }),
   website: z.string().max(0, "Tentative de spam détectée.").optional().or(z.literal("")),
 });

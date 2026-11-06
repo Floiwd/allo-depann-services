@@ -30,7 +30,7 @@ export default function MentionsLegales() {
               Mentions Légales &amp; Confidentialité
             </h1>
             <p className="text-xs text-[var(--text-muted)]">
-              Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")} • Site vitrine {entreprise.nom}
+              Dernière mise à jour : Novembre 2026 • Site vitrine {entreprise.nom}
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function MentionsLegales() {
               <p>
                 <strong>Siège social :</strong>{" "}
                 <span className="italic text-[var(--text-muted)]">
-                  {entreprise.legal.adressePostale || "[À CONFIRMER AVEC LE CLIENT : Adresse du siège social]"}
+                  {entreprise.localisation.adressePostale || "[À CONFIRMER AVEC LE CLIENT : Adresse du siège social]"}
                 </span>
               </p>
               <p>

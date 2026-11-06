@@ -6,7 +6,7 @@ import { Phone, MapPin, Shield } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = 2026;
 
   return (
     <footer className="border-t border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-body)] py-10 transition-colors">
