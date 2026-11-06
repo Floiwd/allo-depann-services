@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { siteConfig, ThemeId } from "@/config/site";
 import { useTheme } from "@/context/ThemeContext";
 import { Palette, Check, X, Copy, CheckCheck, SlidersHorizontal, Sparkles } from "lucide-react";
@@ -10,6 +10,22 @@ export default function StyleSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const [showSummaryModal, setShowSummaryModal] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  // Fermer avec la touche Échap
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        setShowSummaryModal(false);
+      }
+    };
+    if (isOpen || showSummaryModal) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, showSummaryModal]);
 
   if (!showSwitcher) {
     return null;
@@ -60,11 +76,14 @@ Commentaire / Précisions complémentaires :
         </button>
       </div>
 
-      {/* Panneau de sélection */}
+      {/* Panneau de sélection : cliquer à côté (sur le fond) ferme directement le menu et revient au site */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-3 md:p-6 bg-black/40 backdrop-blur-xs animate-in fade-in duration-150">
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-3 md:p-6 bg-black/40 backdrop-blur-xs animate-in fade-in duration-150 cursor-pointer"
+        >
           <div
-            className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 rounded-2xl shadow-2xl border border-neutral-200 dark:border-neutral-800 p-5 md:p-6"
+            className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 rounded-2xl shadow-2xl border border-neutral-200 dark:border-neutral-800 p-5 md:p-6 cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between pb-4 border-b border-neutral-200 dark:border-neutral-800">
@@ -160,8 +179,14 @@ Commentaire / Précisions complémentaires :
       )}
 
       {showSummaryModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="relative w-full max-w-lg bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 rounded-2xl shadow-2xl border border-neutral-200 dark:border-neutral-800 p-6">
+        <div
+          onClick={() => setShowSummaryModal(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150 cursor-pointer"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-lg bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 rounded-2xl shadow-2xl border border-neutral-200 dark:border-neutral-800 p-6 cursor-default"
+          >
             <div className="flex items-start justify-between pb-3 border-b border-neutral-200 dark:border-neutral-800">
               <div>
                 <h4 className="text-base font-bold">Direction retenue pour votre site</h4>
