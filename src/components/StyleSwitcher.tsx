@@ -1,33 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { SHOW_STYLE_SWITCHER, siteConfig, ThemeId } from "@/config/site";
+import React, { useState } from "react";
+import { siteConfig, ThemeId } from "@/config/site";
+import { useTheme } from "@/context/ThemeContext";
 import { Palette, Check, X, Copy, CheckCheck, SlidersHorizontal, Sparkles } from "lucide-react";
 
 export default function StyleSwitcher() {
-  const [currentTheme, setCurrentTheme] = useState<ThemeId>(siteConfig.defaultTheme);
+  const { theme: currentTheme, setTheme, showSwitcher } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [showSummaryModal, setShowSummaryModal] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    if (!SHOW_STYLE_SWITCHER) return;
-    const saved = localStorage.getItem("allo_depann_theme") as ThemeId | null;
-    if (saved && siteConfig.stylesDisponibles.some((s) => s.id === saved)) {
-      setCurrentTheme(saved);
-      document.documentElement.setAttribute("data-theme", saved);
-    } else {
-      document.documentElement.setAttribute("data-theme", siteConfig.defaultTheme);
-    }
-  }, []);
-
-  const changeTheme = (themeId: ThemeId) => {
-    setCurrentTheme(themeId);
-    document.documentElement.setAttribute("data-theme", themeId);
-    localStorage.setItem("allo_depann_theme", themeId);
-  };
-
-  if (!SHOW_STYLE_SWITCHER) {
+  if (!showSwitcher) {
     return null;
   }
 
@@ -43,7 +27,7 @@ Concernant la maquette du site Allo Depann'Services, j'ai sélectionné la direc
 • Description : ${activeStyleInfo.description}
 
 Commentaire / Précisions complémentaires :
-- Le bandeau d'appel direct en haut et le formulaire rapide sont validés.
+- La disposition des blocs et le positionnement du formulaire pour ce thème correspondent bien à mes attentes.
 - Merci de m'indiquer la suite pour la validation finale.`;
 
   const copySummary = async () => {
@@ -58,23 +42,25 @@ Commentaire / Précisions complémentaires :
 
   return (
     <>
-      <div className="fixed bottom-20 md:bottom-6 left-4 z-40">
+      {/* Bouton déclencheur flottant */}
+      <div className="fixed bottom-20 md:bottom-6 left-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
-          aria-label="Changer la direction visuelle de la maquette"
-          className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-full shadow-lg border border-neutral-300 dark:border-neutral-700 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md text-neutral-900 dark:text-neutral-100 text-xs font-semibold hover:scale-105 active:scale-95 transition-all duration-150 cursor-pointer"
+          aria-label="Changer la direction visuelle et la disposition des blocs"
+          className="flex items-center gap-2.5 px-4 py-2.5 rounded-full shadow-xl border border-neutral-300 dark:border-neutral-700 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md text-neutral-900 dark:text-neutral-100 text-xs font-semibold hover:scale-105 active:scale-95 transition-all duration-150 cursor-pointer"
         >
           <span
-            className="w-3 h-3 rounded-full border border-black/20"
+            className="w-3.5 h-3.5 rounded-full border border-black/20"
             style={{ backgroundColor: activeStyleInfo.accentColor }}
           />
-          <span className="hidden sm:inline">Direction de style :</span>
+          <span className="hidden sm:inline">Disposition & Style :</span>
           <span className="font-bold">{activeStyleInfo.nom}</span>
           <SlidersHorizontal className="w-3.5 h-3.5 text-neutral-500 ml-0.5" />
         </button>
       </div>
 
+      {/* Panneau de sélection */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-3 md:p-6 bg-black/40 backdrop-blur-xs animate-in fade-in duration-150">
           <div
@@ -85,10 +71,10 @@ Commentaire / Précisions complémentaires :
               <div>
                 <div className="flex items-center gap-2">
                   <Palette className="w-5 h-5 text-neutral-700 dark:text-neutral-300" />
-                  <h3 className="text-base font-bold tracking-tight">Sélecteur de directions de style</h3>
+                  <h3 className="text-base font-bold tracking-tight">5 Directions & Dispositions de Blocs</h3>
                 </div>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
-                  Testez en direct les 5 identités visuelles conçues pour Allo Depann&apos;Services.
+                  Chaque direction modifie radicalement le positionnement des blocs, la hiérarchie et l&apos;ambiance.
                 </p>
               </div>
               <button
@@ -106,11 +92,13 @@ Commentaire / Précisions complémentaires :
                 return (
                   <button
                     key={style.id}
-                    onClick={() => changeTheme(style.id)}
+                    onClick={() => {
+                      setTheme(style.id);
+                    }}
                     type="button"
                     className={`flex items-start gap-3.5 p-3.5 rounded-xl border text-left transition-all duration-150 cursor-pointer ${
                       isSelected
-                        ? "border-neutral-900 dark:border-white bg-neutral-50 dark:bg-neutral-800/80 ring-1 ring-neutral-900 dark:ring-white"
+                        ? "border-neutral-900 dark:border-white bg-neutral-50 dark:bg-neutral-800/80 ring-2 ring-neutral-900 dark:ring-white"
                         : "border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-700 bg-white dark:bg-neutral-900"
                     }`}
                   >
