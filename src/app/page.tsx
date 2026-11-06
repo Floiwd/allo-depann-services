@@ -2,6 +2,7 @@
 
 import React from "react";
 import MobileCallBar from "@/components/MobileCallBar";
+import MobileQuickActions from "@/components/MobileQuickActions";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StyleSwitcher from "@/components/StyleSwitcher";
@@ -17,11 +18,11 @@ export default function Home() {
   const { theme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-[var(--bg-page)] text-[var(--text-main)] transition-colors selection:bg-[var(--accent-call)] selection:text-[var(--accent-call-text)] pb-16 md:pb-0">
+    <div className="min-h-screen bg-[var(--bg-page)] text-[var(--text-main)] transition-colors selection:bg-[var(--accent-call)] selection:text-[var(--accent-call-text)] pb-24 md:pb-0">
       {/* 1. Bandeau d'appel fixe en haut sur mobile */}
       <MobileCallBar />
 
-      {/* 2. En-tête de navigation */}
+      {/* 2. En-tête de navigation ordinateur & tablette */}
       <Header />
 
       {/* 3. Dispositions de blocs radicalement différentes selon le style choisi */}
@@ -36,7 +37,10 @@ export default function Home() {
       {/* 4. Pied de page conforme */}
       <Footer />
 
-      {/* 5. Sélecteur de styles flottant interactif */}
+      {/* 5. Barre d'actions rapides fixe en bas sur mobile (zone du pouce) */}
+      <MobileQuickActions />
+
+      {/* 6. Sélecteur de styles flottant interactif */}
       <StyleSwitcher />
     </div>
   );

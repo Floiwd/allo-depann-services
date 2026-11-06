@@ -1,14 +1,26 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, Clock, ArrowRight } from "lucide-react";
+import { Phone, Clock, ArrowRight, Copy, Check } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 
 export default function Header() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyPhone = async () => {
+    try {
+      await navigator.clipboard.writeText(entreprise.telephone.display);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback
+    }
+  };
+
   return (
     <header className="hidden md:block sticky top-0 z-30 w-full bg-[var(--bg-header)] backdrop-blur-md border-b border-[var(--border-subtle)] transition-colors">
-      <div className="max-w-6xl mx-auto px-6 h-18 flex items-center justify-between gap-6">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
         {/* Logo & Métier */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-lg bg-[var(--text-main)] text-[var(--bg-page)] flex items-center justify-center font-bold text-base tracking-tighter">
@@ -54,24 +66,41 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* Action prioritaire : Appel direct */}
-        <div className="flex items-center gap-4">
+        {/* Action prioritaire Ordinateur : Numéro en texte + Copier + Bouton Demander */}
+        <div className="flex items-center gap-3">
           <div className="text-right">
-            <span className="block text-[11px] font-semibold text-[var(--text-muted)] flex items-center justify-end gap-1">
+            <span className="text-[11px] font-semibold text-[var(--text-muted)] flex items-center justify-end gap-1">
               <Clock className="w-3 h-3 text-[var(--text-muted)]" />
-              Ligne directe dépanneur
+              Ligne directe
             </span>
-            <span className="text-xs font-bold text-[var(--text-main)]">
-              {entreprise.telephone.display}
-            </span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-bold text-[var(--text-main)] select-all">
+                {entreprise.telephone.display}
+              </span>
+              <button
+                type="button"
+                onClick={handleCopyPhone}
+                title="Copier le numéro de téléphone"
+                aria-label="Copier le numéro de téléphone"
+                className="p-1 rounded hover:bg-[var(--border-subtle)] text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors cursor-pointer"
+              >
+                {copied ? (
+                  <span className="text-[10px] text-emerald-600 font-bold flex items-center gap-0.5">
+                    <Check className="w-3 h-3" />
+                    Copié
+                  </span>
+                ) : (
+                  <Copy className="w-3 h-3" />
+                )}
+              </button>
+            </div>
           </div>
 
           <a
-            href={entreprise.telephone.href}
-            className="theme-btn-call flex items-center gap-2 px-5 py-2.5 text-xs font-bold shadow-sm hover:shadow cursor-pointer"
+            href="#devis"
+            className="theme-btn-call flex items-center gap-2 px-4 py-2 text-xs font-bold shadow-sm hover:shadow cursor-pointer"
           >
-            <Phone className="w-3.5 h-3.5 fill-current" />
-            <span>Appeler maintenant</span>
+            <span>Demander une intervention</span>
             <ArrowRight className="w-3 h-3 ml-0.5 opacity-80" />
           </a>
         </div>

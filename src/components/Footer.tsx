@@ -9,9 +9,9 @@ export default function Footer() {
   const currentYear = 2026;
 
   return (
-    <footer className="border-t border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-body)] py-10 transition-colors">
+    <footer className="border-t border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-body)] py-8 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <div>
             <h3 className="text-base font-extrabold text-[var(--text-main)] tracking-tight mb-2">
               {entreprise.nom}

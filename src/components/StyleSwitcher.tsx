@@ -42,21 +42,21 @@ Commentaire / Précisions complémentaires :
 
   return (
     <>
-      {/* Bouton déclencheur flottant */}
-      <div className="fixed bottom-20 md:bottom-6 left-4 z-50">
+      {/* Bouton déclencheur flottant : en haut à droite sous le bandeau sur mobile, en bas à gauche sur desktop */}
+      <div className="fixed top-14 right-3 md:top-auto md:bottom-6 md:left-4 z-30">
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
           aria-label="Changer la direction visuelle et la disposition des blocs"
-          className="flex items-center gap-2.5 px-4 py-2.5 rounded-full shadow-xl border border-neutral-300 dark:border-neutral-700 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md text-neutral-900 dark:text-neutral-100 text-xs font-semibold hover:scale-105 active:scale-95 transition-all duration-150 cursor-pointer"
+          className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 rounded-full shadow-lg border border-neutral-300 dark:border-neutral-700 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md text-neutral-900 dark:text-neutral-100 text-xs font-semibold hover:scale-105 active:scale-95 transition-all duration-150 cursor-pointer"
         >
           <span
-            className="w-3.5 h-3.5 rounded-full border border-black/20"
+            className="w-3 h-3 md:w-3.5 md:h-3.5 rounded-full border border-black/20"
             style={{ backgroundColor: activeStyleInfo.accentColor }}
           />
-          <span className="hidden sm:inline">Disposition & Style :</span>
-          <span className="font-bold">{activeStyleInfo.nom}</span>
-          <SlidersHorizontal className="w-3.5 h-3.5 text-neutral-500 ml-0.5" />
+          <span className="hidden sm:inline">Style :</span>
+          <span className="font-bold text-[11px] md:text-xs">{activeStyleInfo.nom}</span>
+          <SlidersHorizontal className="w-3 h-3 md:w-3.5 md:h-3.5 text-neutral-500 ml-0.5" />
         </button>
       </div>
 

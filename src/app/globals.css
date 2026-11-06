@@ -36,7 +36,7 @@
     --bg-header: rgba(248, 250, 252, 0.94);
     --text-main: #0f172a;
     --text-body: #1e293b;
-    --text-muted: #64748b;
+    --text-muted: #475569;
     --border-subtle: #e2e8f0;
     --border-strong: #94a3b8;
     --accent-call: #0284c7;
@@ -63,7 +63,7 @@
     --bg-header: rgba(255, 255, 255, 0.96);
     --text-main: #09090b;
     --text-body: #27272a;
-    --text-muted: #71717a;
+    --text-muted: #52525b;
     --border-subtle: #e4e4e7;
     --border-strong: #18181b;
     --accent-call: #18181b;
@@ -91,8 +91,8 @@
     --text-main: #f4f4f5;
     --text-body: #cbd5e1;
     --text-muted: #94a3b8;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-strong: rgba(212, 175, 55, 0.4);
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(212, 175, 55, 0.5);
     --accent-call: #d4af37;
     --accent-call-hover: #c59b27;
     --accent-call-text: #090a0d;
@@ -100,7 +100,7 @@
     --accent-badge-border: rgba(212, 175, 55, 0.35);
     --accent-badge-text: #f0d57e;
     --secondary-btn-bg: #14171d;
-    --secondary-btn-border: rgba(255, 255, 255, 0.15);
+    --secondary-btn-border: rgba(255, 255, 255, 0.18);
     --secondary-btn-text: #f4f4f5;
     --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
     --card-shadow-hover: 0 10px 30px -4px rgba(212, 175, 55, 0.15);
@@ -117,7 +117,7 @@
     --bg-header: rgba(253, 251, 247, 0.94);
     --text-main: #2b211a;
     --text-body: #4a3b32;
-    --text-muted: #786457;
+    --text-muted: #6b5446;
     --border-subtle: #ebdcd0;
     --border-strong: #cbb4a3;
     --accent-call: #c2410c;

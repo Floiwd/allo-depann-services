@@ -1,52 +1,37 @@
-# TB TOITURES — Données à Confirmer avant Mise en Ligne
+# ALLO DEPANN'SERVICES — Données à Confirmer avant Mise en Ligne
 
-Ce document recense l'ensemble des informations manquantes nécessaires pour finaliser le site vitrine officiel de **TB Toitures** et assurer sa conformité légale et commerciale.
+Ce document recense l'ensemble des informations manquantes nécessaires pour finaliser le site vitrine officiel de **Allo Depann'Services** et assurer sa conformité légale et commerciale.
 
 ---
 
-## 1. Coordonnées & Localisation
-- [ ] **Numéro de rue exact** :
-  - *Actuel* : `rue Pierre Cremel, 54410 Laneuveville-devant-Nancy`
-  - *À confirmer* : le numéro précis dans la rue Pierre Cremel (ex. 12, 24 bis...).
-- [ ] **Rayon d'intervention précis** :
-  - *Actuel* : Nancy et alentours (périmètre indicatif de ~30 km)
-  - *À confirmer* : le rayon kilométrique exact (ex. 25 km, 35 km ou 50 km autour de Laneuveville) et les limites géographiques d'intervention (ex. Lunéville, Pont-à-Mousson, Toul ?).
-- [ ] **Email de réception des devis** :
+## 1. Photos et Visuels
+- [ ] **Remplacer toutes les images illustratives par de vraies photos de chantiers** :
+  - *Actuel* : 7 photographies illustratives générées par IA avec badge discret automatique « Photo illustrative » (`src/data/images.ts`).
+  - *À fournir* : vraies photos de l'artisan (portes débloquées, serrures remplacées, cylindres haute sécurité, camionnette ou matériel).
+
+---
+
+## 2. Coordonnées & Localisation
+- [ ] **Orthographe exacte de la dénomination commerciale** :
+  - *Actuel* : `Allo Depann'Services` (ou Allo Dépann' Services)
+- [ ] **Ville de base / Siège & Zone desservie** :
+  - *À confirmer* : ville de rattachement principale et liste exacte des communes d'intervention prioritaires.
+- [ ] **Email de réception des demandes** :
   - *Actuel* : variable d'environnement `CONTACT_TO_EMAIL`
-  - *À confirmer* : l'adresse email professionnelle de l'artisan (ex. `contact@tb-toitures.fr` ou messagerie dédiée).
+  - *À confirmer* : l'adresse email professionnelle définitive de l'artisan.
 
 ---
 
-## 2. Informations Juridiques & Légales Obligatoires (Loi LCEN & Code de la Construction)
-- [ ] **Numéro SIRET / RCS / RM** :
-  - *À fournir* : numéro SIRET à 14 chiffres et lieu d'immatriculation (RCS de Nancy / Chambre de Métiers et de l'Artisanat de Meurthe-et-Moselle).
-- [ ] **Forme juridique & capital social** :
-  - *À confirmer* : Entreprise Individuelle (EI), SARL, SASU, etc.
-- [ ] **Numéro de TVA intracommunautaire** :
-  - *À confirmer* : numéro FR... ou mention légale *« Franchise en base de TVA, art. 293 B du CGI »*.
-- [ ] **Assurance Décennale & Responsabilité Civile Professionnelle** (Obligation légale pour les couvreurs/charpentiers) :
-  - *À fournir* :
-    - Nom de la compagnie d'assurance (ex. AXA, SMA BTP, Allianz, MAAF...)
-    - Numéro de contrat / police d'assurance décennale
-    - Couverture géographique du contrat
+## 3. Informations Juridiques & Légales Obligatoires
+- [ ] **Numéro SIRET / RCS / RM**
+- [ ] **Forme juridique & capital social**
+- [ ] **Assurance Responsabilité Civile Professionnelle**
 
 ---
 
-## 3. Disponibilité & Modalités d'Intervention
-- [ ] **Horaires réels d'intervention & accueil téléphonique** :
-  - *Mention PagesJaunes* : « 7j/7, 24h/24 »
-  - *À confirmer* :
-    - Horaires réels pour les chantiers programmés (ex. Lundi au Vendredi de 7h30 à 18h30, Samedi matin ?)
-    - Modalités exactes des urgences de nuit, week-end ou intempéries (fuite active, bâchage suite à tempête).
-
----
-
-## 4. Historique, Expérience & Certifications
-- [ ] **Année de création / Années d'expérience du dirigeant** :
-  - *Règle d'exactitude* : aucune année inventée dans la maquette.
-  - *À confirmer* : date de création de l'entreprise ou nombre d'années d'exercice dans le métier de couvreur-zingueur.
-- [ ] **Certifications & Qualifications éventuelles** :
-  - *À confirmer* : labels éventuels (ex. RGE, Qualibat, Eco Artisan, Installateur Conseil Velux, etc.) ou formations spécifiques.
+## 4. Disponibilité & Tarifs
+- [ ] **Horaires réels et astreinte d'urgence**
+- [ ] **Tarifs ou fourchettes autorisés à l'affichage public**
 
 ---
 

@@ -22,17 +22,27 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem("allo_depann_theme") as ThemeId | null;
-    if (saved && siteConfig.stylesDisponibles.some((s) => s.id === saved)) {
-      setThemeState(saved);
-      document.documentElement.setAttribute("data-theme", saved);
+    const initial = saved && siteConfig.stylesDisponibles.some((s) => s.id === saved)
+      ? saved
+      : siteConfig.defaultTheme;
+
+    setThemeState(initial);
+    document.documentElement.setAttribute("data-theme", initial);
+    if (initial === "sombre") {
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.setAttribute("data-theme", siteConfig.defaultTheme);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const setTheme = (newTheme: ThemeId) => {
     setThemeState(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
+    if (newTheme === "sombre") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
     localStorage.setItem("allo_depann_theme", newTheme);
   };
 
