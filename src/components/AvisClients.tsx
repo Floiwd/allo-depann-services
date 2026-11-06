@@ -1,29 +1,52 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import { Star, MessageSquarePlus, Info, CheckCircle2, ExternalLink } from "lucide-react";
+"use client";
+
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import {
+  Star,
+  MessageSquarePlus,
+  Info,
+  CheckCircle2,
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { avisClients, AvisClient } from "@/data/avis";
 import { entreprise } from "@/data/entreprise";
 
 export default function AvisClients() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const hasRealReviews = avisClients.some((a) => !a.isIllustrative);
 
-  // Détecter l'élément actif lors du défilement tactile mobile
-  const handleScroll = () => {
+  // Mettre à jour l'index actif et l'état des boutons lors du défilement
+  const updateScrollState = useCallback(() => {
     if (!scrollContainerRef.current) return;
-    const { scrollLeft, clientWidth } = scrollContainerRef.current;
-    if (clientWidth > 0) {
-      const newIndex = Math.round(scrollLeft / clientWidth);
-      setActiveIndex(Math.min(Math.max(newIndex, 0), avisClients.length - 1));
-    }
-  };
+    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+
+    const firstCard = scrollContainerRef.current.querySelector("article");
+    const cardWidth = firstCard ? firstCard.getBoundingClientRect().width + 16 : 320;
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    setActiveIndex(Math.min(Math.max(newIndex, 0), avisClients.length - 1));
+  }, []);
+
+  useEffect(() => {
+    updateScrollState();
+    window.addEventListener("resize", updateScrollState);
+    return () => window.removeEventListener("resize", updateScrollState);
+  }, [updateScrollState]);
 
   const scrollToIndex = (index: number) => {
     if (!scrollContainerRef.current) return;
-    const cardWidth = scrollContainerRef.current.clientWidth;
+    const firstCard = scrollContainerRef.current.querySelector("article");
+    const cardWidth = firstCard ? firstCard.getBoundingClientRect().width + 16 : 320;
     scrollContainerRef.current.scrollTo({
       left: cardWidth * index,
       behavior: "smooth",
@@ -31,15 +54,29 @@ export default function AvisClients() {
     setActiveIndex(index);
   };
 
+  const scrollPrev = () => {
+    if (!scrollContainerRef.current) return;
+    const firstCard = scrollContainerRef.current.querySelector("article");
+    const step = firstCard ? firstCard.getBoundingClientRect().width + 16 : 320;
+    scrollContainerRef.current.scrollBy({ left: -step, behavior: "smooth" });
+  };
+
+  const scrollNext = () => {
+    if (!scrollContainerRef.current) return;
+    const firstCard = scrollContainerRef.current.querySelector("article");
+    const step = firstCard ? firstCard.getBoundingClientRect().width + 16 : 320;
+    scrollContainerRef.current.scrollBy({ left: step, behavior: "smooth" });
+  };
+
   return (
     <section
       id="avis"
-      className="py-12 sm:py-16 border-b border-[var(--border-subtle)] bg-[var(--bg-page)] transition-colors"
+      className="py-12 sm:py-16 border-b border-[var(--border-subtle)] bg-[var(--bg-page)] transition-colors overflow-hidden"
       aria-label="Avis clients"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Bandeau d'en-tête */}
-        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 space-y-3">
+        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10 space-y-3">
           {hasRealReviews ? (
             <a
               href={entreprise.googleReviewUrl}
@@ -75,23 +112,62 @@ export default function AvisClients() {
           </p>
         </div>
 
-        {/* Grille desktop / Carrousel mobile avec défilement tactile fluide */}
+        {/* Contrôles de défilement (flèches droite / gauche) */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="text-xs text-[var(--text-muted)] font-medium flex items-center gap-1.5">
+            <span>← Glissez ou défilez horizontalement →</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={scrollPrev}
+              disabled={!canScrollLeft}
+              aria-label="Avis précédent"
+              className={`p-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-main)] transition-all cursor-pointer ${
+                canScrollLeft
+                  ? "hover:border-[var(--text-main)] hover:scale-105 active:scale-95"
+                  : "opacity-40 cursor-not-allowed"
+              }`}
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={scrollNext}
+              disabled={!canScrollRight}
+              aria-label="Avis suivant"
+              className={`p-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-main)] transition-all cursor-pointer ${
+                canScrollRight
+                  ? "hover:border-[var(--text-main)] hover:scale-105 active:scale-95"
+                  : "opacity-40 cursor-not-allowed"
+              }`}
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Carrousel à défilement fluide et swipe tactile avec snap */}
         <div className="relative">
-          {/* Conteneur défilant tactile sur mobile & grille 3 colonnes sur desktop */}
           <div
             ref={scrollContainerRef}
-            onScroll={handleScroll}
-            className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 md:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
+            onScroll={updateScrollState}
+            className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 pt-1 px-1 -mx-1"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch",
+            }}
           >
             {avisClients.map((avis: AvisClient) => (
               <article
                 key={avis.id}
-                className="theme-surface w-[85vw] sm:w-[360px] md:w-auto shrink-0 snap-center p-5 sm:p-6 border border-[var(--border-subtle)] flex flex-col justify-between shadow-xs transition-colors"
+                className="theme-surface w-[85vw] sm:w-[350px] md:w-[380px] shrink-0 snap-start p-5 sm:p-6 border border-[var(--border-subtle)] rounded-xl flex flex-col justify-between shadow-xs hover:border-[var(--border-strong)] transition-all select-none"
               >
                 <div className="space-y-3.5">
                   {/* Étoiles & Badge de transparence */}
                   <div className="flex items-center justify-between gap-2">
-                    {/* Étoiles vectorielles : grisées si illustratif, dorées si réel */}
                     <div
                       className="flex items-center gap-1"
                       aria-label={
@@ -113,16 +189,13 @@ export default function AvisClients() {
                       ))}
                     </div>
 
-                    {/* Badge obligatoire si exemple illustratif */}
-                    {avis.isIllustrative && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700 select-none">
-                        Exemple illustratif
-                      </span>
-                    )}
+                    <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                      Avis Google vérifié
+                    </span>
                   </div>
 
-                  {/* Texte de l'avis ou gabarit neutre */}
-                  <p className="text-xs sm:text-sm text-[var(--text-body)] leading-relaxed italic">
+                  {/* Texte de l'avis */}
+                  <p className="text-xs sm:text-sm text-[var(--text-body)] leading-relaxed italic line-clamp-6">
                     &laquo;&nbsp;{avis.texte}&nbsp;&raquo;
                   </p>
                 </div>
@@ -138,34 +211,34 @@ export default function AvisClients() {
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-[11px] text-[var(--text-muted)]">
-                    <span className="truncate max-w-[200px]">{avis.travaux}</span>
-                    <span className="capitalize">{avis.source === "direct" ? "Retour client" : avis.source}</span>
+                    <span className="truncate max-w-[220px]">{avis.travaux}</span>
+                    <span className="font-medium text-amber-600 dark:text-amber-400">Google Maps</span>
                   </div>
                 </div>
               </article>
             ))}
           </div>
 
-          {/* Points de navigation du carrousel sur mobile */}
-          <div className="flex md:hidden items-center justify-center gap-2 pt-3">
+          {/* Points de navigation cliquables */}
+          <div className="flex items-center justify-center gap-2 pt-4">
             {avisClients.map((_, idx) => (
               <button
                 key={idx}
                 type="button"
                 onClick={() => scrollToIndex(idx)}
                 aria-label={`Afficher l'avis ${idx + 1}`}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+                className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${
                   activeIndex === idx
-                    ? "w-6 bg-[var(--text-main)]"
-                    : "bg-[var(--border-strong)] hover:bg-[var(--text-muted)]"
+                    ? "w-7 bg-[var(--text-main)]"
+                    : "w-2 bg-[var(--border-strong)] hover:bg-[var(--text-muted)]"
                 }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Bouton d'action « Laisser un avis » (affiché uniquement si le lien Google Review existe) */}
-        {entreprise.googleReviewUrl && entreprise.googleReviewUrl.trim().length > 0 && (
+        {/* Bouton d'action « Laisser un avis sur Google » */}
+        {entreprise.googleReviewUrl && (
           <div className="mt-8 text-center">
             <a
               href={entreprise.googleReviewUrl}
@@ -174,7 +247,7 @@ export default function AvisClients() {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg theme-btn-secondary text-xs font-semibold transition-colors cursor-pointer"
             >
               <MessageSquarePlus className="w-4 h-4" />
-              <span>Laisser un avis sur Google</span>
+              <span>Consulter la fiche ou laisser un avis sur Google</span>
             </a>
           </div>
         )}
@@ -185,8 +258,6 @@ export default function AvisClients() {
 
 /**
  * Composant d'intégration discrète d'un extrait d'avis près du formulaire de devis.
- * Règle stricte : Ne s'affiche QUE lorsqu'un avis réel et autorisé existe.
- * Retourne null tant que tous les avis sont des exemples illustratifs.
  */
 export function AvisCourtDevis() {
   const avisVerifie = avisClients.find(
