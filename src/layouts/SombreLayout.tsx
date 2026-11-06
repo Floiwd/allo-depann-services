@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import IllustrativeImage from "@/components/IllustrativeImage";
 import { Phone, Shield, Lock, Award, Key, ArrowRight, Sparkles } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";
@@ -81,6 +82,9 @@ export default function SombreLayout() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Grande carte Bento vedette : Porte blindée / Effraction */}
             <div className="md:col-span-2 p-5 sm:p-6 rounded-2xl bg-[#13151f] border border-[#d4af37]/30 flex flex-col justify-between relative overflow-hidden group">
+              <div className="relative w-full h-48 sm:h-56 rounded-xl overflow-hidden mb-4 border border-[#252836] bg-[#0f1118]">
+                <IllustrativeImage imageId="porte-blindee" className="w-full h-full" />
+              </div>
               <div className="relative z-10 space-y-2">
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#d4af37]/10 text-[#f0d57e] text-xs font-semibold">
                   <Shield className="w-3.5 h-3.5" />
@@ -113,6 +117,9 @@ export default function SombreLayout() {
             {/* Carte satellite : Porte claquée */}
             <div className="p-5 rounded-2xl bg-[#13151f] border border-[#252836] hover:border-[#d4af37]/50 flex flex-col justify-between transition-colors">
               <div>
+                <div className="relative w-full h-44 rounded-xl overflow-hidden mb-3.5 border border-[#252836] bg-[#0f1118]">
+                  <IllustrativeImage imageId="porte-claquee" className="w-full h-full" />
+                </div>
                 <span className="text-[10px] font-mono text-[#d4af37] uppercase">Technique fine</span>
                 <h3 className="text-sm sm:text-base font-bold text-white mt-1">Porte claquée</h3>
                 <p className="text-xs text-[#828898] mt-1.5 leading-relaxed">
@@ -141,6 +148,9 @@ export default function SombreLayout() {
                   className="p-4 rounded-xl bg-[#13151f] border border-[#252836] hover:border-[#d4af37]/40 flex flex-col justify-between transition-colors"
                 >
                   <div>
+                    <div className="relative w-full h-40 rounded-lg overflow-hidden mb-3 border border-[#252836] bg-[#0f1118]">
+                      <IllustrativeImage imageId={s.id} className="w-full h-full" />
+                    </div>
                     <h3 className="text-xs sm:text-sm font-bold text-white">{s.titre}</h3>
                     <p className="text-xs text-[#828898] mt-1 leading-relaxed">{s.descriptionCourte}</p>
                   </div>

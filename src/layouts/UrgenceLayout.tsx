@@ -147,39 +147,46 @@ export default function UrgenceLayout() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {entreprise.services.filter((s) => s.confirmed).map((s) => (
               <div
                 key={s.id}
-                className="theme-surface p-3.5 border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--border-strong)] transition-all shadow-xs"
+                className="theme-surface p-4 rounded-xl border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--border-strong)] transition-all shadow-xs"
               >
-                <div className="flex gap-3 items-start">
-                  <div className="relative w-16 h-16 shrink-0 rounded-lg overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-page)]">
+                <div>
+                  <div className="relative w-full h-44 sm:h-48 rounded-lg overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-page)] mb-3">
                     <IllustrativeImage
                       imageId={s.id}
                       className="w-full h-full"
                     />
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-xs font-bold text-[var(--text-main)] truncate">{s.titre}</h3>
-                    <p className="text-[11px] text-[var(--text-muted)] mt-0.5 line-clamp-2 leading-tight">
-                      {s.descriptionCourte}
-                    </p>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-sm font-bold text-[var(--text-main)] truncate">{s.titre}</h3>
+                    <span className="text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800 shrink-0">
+                      Dépannage rapide
+                    </span>
                   </div>
+                  <p className="text-xs text-[var(--text-muted)] mt-1.5 leading-relaxed">
+                    {s.descriptionCourte}
+                  </p>
                 </div>
 
-                <div className="mt-2.5 pt-2 border-t border-[var(--border-subtle)] flex items-center justify-between">
-                  <span className="text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">
-                    Intervention rapide
-                  </span>
+                <div className="mt-4 pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between">
+                  <a
+                    href={entreprise.telephone.href}
+                    className="text-xs font-bold text-[var(--accent-call)] hover:underline flex items-center gap-1.5"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Appeler</span>
+                  </a>
                   <button
                     onClick={() => {
                       setSelectedSituation(s.titre);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
-                    className="text-xs font-bold text-[var(--accent-call)] hover:underline flex items-center gap-1 cursor-pointer"
+                    className="text-xs font-bold text-[var(--text-main)] hover:text-[var(--accent-call)] flex items-center gap-1 cursor-pointer"
                   >
-                    <span>Choisir</span>
+                    <span>Pré-remplir le devis</span>
                     <ArrowDown className="w-3 h-3" />
                   </button>
                 </div>

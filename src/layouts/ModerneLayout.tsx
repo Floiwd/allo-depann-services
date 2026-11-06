@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import IllustrativeImage from "@/components/IllustrativeImage";
 import { Phone, ArrowUpRight, ArrowDown } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";
@@ -94,30 +95,35 @@ export default function ModerneLayout() {
                   const el = document.getElementById("devis-moderne");
                   el?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="py-4 group flex flex-col md:flex-row md:items-center justify-between gap-3 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-900/40 px-2 transition-colors"
+                className="py-5 group flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-900/40 px-3 rounded-lg transition-colors"
               >
-                <div className="flex items-start md:items-center gap-4 sm:gap-6">
-                  <span className="font-mono text-xs text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
-                    [0{idx + 1}]
-                  </span>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 flex-1">
+                  <div className="relative w-full sm:w-44 h-36 sm:h-28 rounded-md overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 bg-neutral-100 dark:bg-neutral-900">
+                    <IllustrativeImage imageId={s.id} className="w-full h-full" />
+                  </div>
                   <div>
-                    <h3 className="text-sm sm:text-base font-bold uppercase tracking-tight group-hover:translate-x-1 transition-transform">
-                      {s.titre}
-                    </h3>
-                    <p className="text-xs text-neutral-500 mt-0.5 max-w-xl">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-xs text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
+                        [0{idx + 1}]
+                      </span>
+                      <h3 className="text-base sm:text-lg font-bold uppercase tracking-tight group-hover:translate-x-1 transition-transform">
+                        {s.titre}
+                      </h3>
+                    </div>
+                    <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1 max-w-xl leading-relaxed">
                       {s.descriptionCourte} — <span className="italic">{s.descriptionDetaillee}</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 shrink-0">
+                <div className="flex items-center gap-3 shrink-0 self-end md:self-center">
                   <span className="text-xs font-mono uppercase text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Sélectionner →
                   </span>
                   <a
                     href={entreprise.telephone.href}
                     onClick={(e) => e.stopPropagation()}
-                    className="p-1.5 border border-neutral-300 dark:border-neutral-700 hover:border-black dark:hover:border-white transition-colors"
+                    className="p-2 border border-neutral-300 dark:border-neutral-700 hover:border-black dark:hover:border-white transition-colors rounded-sm"
                     title="Appeler"
                   >
                     <Phone className="w-3.5 h-3.5" />

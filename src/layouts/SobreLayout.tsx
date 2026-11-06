@@ -118,44 +118,44 @@ export default function SobreLayout() {
             </p>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             {entreprise.services.filter((s) => s.confirmed).map((s) => (
               <div
                 key={s.id}
-                className="p-4 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs hover:border-sky-500 transition-colors"
+                className="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xs hover:border-sky-500 transition-colors"
               >
-                <div className="flex items-center gap-3.5">
-                  <div className="relative w-14 h-14 rounded bg-slate-50 dark:bg-slate-800 shrink-0 border border-slate-200 dark:border-slate-700 overflow-hidden">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-1 w-full">
+                  <div className="relative w-full sm:w-52 h-40 sm:h-32 rounded-lg bg-slate-50 dark:bg-slate-800 shrink-0 border border-slate-200 dark:border-slate-700 overflow-hidden">
                     <IllustrativeImage imageId={s.id} className="w-full h-full" />
                   </div>
-                  <div>
+                  <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">{s.titre}</h3>
-                      <span className="text-[9px] font-mono text-slate-500 uppercase bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">
+                      <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">{s.titre}</h3>
+                      <span className="text-[10px] font-mono text-slate-500 uppercase bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
                         Serrurerie
                       </span>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">{s.descriptionCourte}</p>
-                    <p className="text-[11px] text-slate-500 italic mt-0.5">{s.descriptionDetaillee}</p>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{s.descriptionCourte}</p>
+                    <p className="text-xs text-slate-500 italic mt-0.5">{s.descriptionDetaillee}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2.5 w-full sm:w-auto shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 dark:border-slate-800">
+                <div className="flex items-center gap-2.5 w-full md:w-auto shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
                   <button
                     onClick={() => {
                       setSelectedSituation(s.titre);
                       const el = document.getElementById("devis-sobre");
                       el?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="flex-1 sm:flex-none px-3 py-1.5 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 cursor-pointer"
+                    className="flex-1 md:flex-none px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 cursor-pointer transition-colors"
                   >
                     Sélectionner
                   </button>
                   <a
                     href={entreprise.telephone.href}
-                    className="px-3 py-1.5 rounded text-xs font-semibold bg-sky-700 hover:bg-sky-600 text-white flex items-center gap-1.5 cursor-pointer"
+                    className="px-4 py-2.5 rounded-lg text-xs font-semibold bg-sky-700 hover:bg-sky-600 text-white flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
                   >
-                    <Phone className="w-3 h-3 fill-current" />
+                    <Phone className="w-3.5 h-3.5 fill-current" />
                     <span>Appeler</span>
                   </a>
                 </div>

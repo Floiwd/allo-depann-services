@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import IllustrativeImage from "@/components/IllustrativeImage";
 import { ArrowRight, Phone } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 
@@ -41,18 +42,11 @@ export default function SituationsUrgence({ onSelectSituation }: SituationsUrgen
               className="theme-surface flex flex-col justify-between overflow-hidden border border-[var(--border-subtle)] p-5 transition-all group"
             >
               <div>
-                <div className="relative w-full h-40 bg-[var(--bg-page)] rounded-lg overflow-hidden border border-[var(--border-subtle)] mb-4">
-                  <Image
-                    src={service.placeholderImage}
-                    alt={`Schéma technique d'intervention : ${service.titre}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-contain p-2 group-hover:scale-102 transition-transform duration-300"
-                    loading="lazy"
+                <div className="relative w-full h-48 sm:h-52 bg-[var(--bg-page)] rounded-xl overflow-hidden border border-[var(--border-subtle)] mb-4">
+                  <IllustrativeImage
+                    imageId={service.id}
+                    className="w-full h-full"
                   />
-                  <span className="absolute bottom-1 right-2 text-[10px] font-mono text-[var(--text-muted)] bg-[var(--bg-surface)]/90 px-1.5 py-0.5 rounded">
-                    Photo à confirmer
-                  </span>
                 </div>
 
                 <div className="flex items-center justify-between gap-2 mb-2">

@@ -124,12 +124,12 @@ export default function ChaleureuxLayout() {
                 key={s.id}
                 className="bg-white p-5 rounded-3xl border border-[#ebdcd0] shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow"
               >
-                <div className="space-y-2.5">
-                  <div className="relative w-full h-36 rounded-2xl overflow-hidden bg-[#f7efe4] border border-[#ebdcd0]">
+                <div className="space-y-3">
+                  <div className="relative w-full h-48 sm:h-52 rounded-2xl overflow-hidden bg-[#f7efe4] border border-[#ebdcd0]">
                     <IllustrativeImage imageId={s.id} className="w-full h-full" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-[#2b211a]">{s.titre}</h3>
-                  <p className="text-xs text-[#5c4a3e] leading-relaxed">{s.descriptionCourte}</p>
+                  <h3 className="text-base sm:text-lg font-bold text-[#2b211a]">{s.titre}</h3>
+                  <p className="text-xs sm:text-sm text-[#5c4a3e] leading-relaxed">{s.descriptionCourte}</p>
                 </div>
 
                 <div className="pt-3 mt-2.5 border-t border-[#f0e4d7] flex items-center justify-between">
