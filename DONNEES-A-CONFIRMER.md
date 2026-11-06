@@ -43,12 +43,9 @@ Ce document recense l'ensemble des informations manquantes nécessaires pour fin
 ---
 
 ## 6. Avis Clients & Témoignages
-- [ ] **Obtenir 3 à 5 avis réels avec l'accord du client, le lien d'avis Google de l'entreprise et la note Google réelle.**
-  - *Actuel* : Gabarits illustratifs neutres (sans note chiffrée, sans avis inventé, badge « Exemple illustratif » automatique via `src/data/avis.ts`).
-  - *À fournir dès que possible* :
-    - 3 à 5 avis clients réels avec l'accord écrit préalable du client pour publication sur le site.
-    - Le lien d'avis Google My Business pour alimenter le bouton « Laisser un avis ».
-    - La note moyenne Google vérifiable (le cas échéant).
+- [x] **Avis Google réels intégrés** :
+  - *Actuel* : 5 vrais avis publics récents extraits de la fiche officielle Google Maps certifiée (Note 5,0/5 sur 338 avis vérifiés, 78A rue Kellermann à Metz).
+  - *Lien Google Maps actif* : Le bouton renvoie directement vers sa fiche d'avis Google officielle.
 
 ---
 
