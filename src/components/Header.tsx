@@ -74,7 +74,7 @@ export default function Header() {
               Ligne directe
             </span>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-[var(--text-main)] select-all">
+              <span className="text-xs font-bold text-[var(--text-main)] select-all whitespace-nowrap tracking-wide">
                 {entreprise.telephone.display}
               </span>
               <button

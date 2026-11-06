@@ -21,11 +21,11 @@ export default function MobileCallBar() {
         {/* Bandeau haut : uniquement le numéro cliquable sans doublon de gros bouton */}
         <a
           href={entreprise.telephone.href}
-          className="text-xs font-extrabold text-[var(--accent-call)] flex items-center gap-1.5 py-1 px-2.5 rounded-md hover:bg-[var(--accent-badge-bg)] transition-colors"
+          className="text-xs font-black text-[var(--accent-call)] flex items-center gap-1.5 py-1 px-2.5 rounded-md hover:bg-[var(--accent-badge-bg)] transition-colors shrink-0 whitespace-nowrap"
           aria-label={`Ligne directe au ${entreprise.telephone.display}`}
         >
           <Phone className="w-3.5 h-3.5 shrink-0 fill-current" />
-          <span>{entreprise.telephone.display}</span>
+          <span className="whitespace-nowrap tracking-wide">{entreprise.telephone.display}</span>
         </a>
       </div>
     </div>

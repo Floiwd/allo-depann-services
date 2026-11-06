@@ -54,11 +54,11 @@ export default function ModerneLayout() {
               <div className="md:col-span-5 flex flex-col gap-2.5">
                 <a
                   href={entreprise.telephone.href}
-                  className="flex items-center justify-between px-5 py-4 bg-black dark:bg-white text-white dark:text-black text-sm sm:text-base font-bold tracking-tight hover:opacity-90 transition-opacity"
+                  className="flex items-center justify-between px-5 py-4 bg-black dark:bg-white text-white dark:text-black text-sm sm:text-base font-bold tracking-tight hover:opacity-90 transition-opacity gap-3"
                 >
-                  <span className="font-mono text-xs uppercase">Ligne directe</span>
-                  <span className="font-black text-lg">{entreprise.telephone.display}</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <span className="font-mono text-xs uppercase shrink-0">Ligne directe</span>
+                  <span className="font-black text-base sm:text-lg whitespace-nowrap tracking-tight">{entreprise.telephone.display}</span>
+                  <ArrowUpRight className="w-4 h-4 shrink-0" />
                 </a>
 
                 <a

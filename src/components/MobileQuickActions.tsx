@@ -61,10 +61,13 @@ export default function MobileQuickActions() {
         <a
           href={entreprise.telephone.href}
           aria-label={`Appeler au ${entreprise.telephone.display}`}
-          className="flex-[2] min-h-[48px] theme-btn-call px-3 py-2.5 text-xs sm:text-sm font-extrabold flex items-center justify-center gap-1.5 shadow-md active:scale-98 transition-all cursor-pointer"
+          className="flex-[2] min-h-[48px] theme-btn-call px-2.5 py-1.5 flex items-center justify-center gap-2 shadow-md active:scale-98 transition-all cursor-pointer whitespace-nowrap"
         >
           <Phone className="w-4 h-4 shrink-0 fill-current" />
-          <span className="truncate">Appeler ({entreprise.telephone.display})</span>
+          <div className="flex flex-col items-start leading-tight">
+            <span className="text-[10px] uppercase font-bold tracking-wider opacity-90">Appel direct</span>
+            <span className="text-xs sm:text-sm font-black tracking-tight">{entreprise.telephone.display}</span>
+          </div>
         </a>
 
         {/* 2. SMS : Lien sms: avec message pré-rempli */}

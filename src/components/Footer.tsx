@@ -22,10 +22,10 @@ export default function Footer() {
             <div className="space-y-1.5 text-xs">
               <a
                 href={entreprise.telephone.href}
-                className="flex items-center gap-2 text-[var(--text-main)] font-bold hover:underline"
+                className="flex items-center gap-2 text-[var(--text-main)] font-bold hover:underline whitespace-nowrap"
               >
-                <Phone className="w-3.5 h-3.5 text-[var(--accent-call)] fill-current" />
-                <span>{entreprise.telephone.display} (Appel direct)</span>
+                <Phone className="w-3.5 h-3.5 text-[var(--accent-call)] fill-current shrink-0" />
+                <span>{entreprise.telephone.display} <span className="font-normal text-xs text-[var(--text-muted)]">(Appel direct)</span></span>
               </a>
               <div className="flex items-center gap-2 text-[var(--text-muted)]">
                 <MapPin className="w-3.5 h-3.5 shrink-0" />

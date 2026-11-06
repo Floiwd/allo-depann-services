@@ -43,10 +43,10 @@ export default function SobreLayout() {
             <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
               <a
                 href={entreprise.telephone.href}
-                className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3 rounded-md bg-sky-600 hover:bg-sky-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-md"
+                className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3 rounded-md bg-sky-600 hover:bg-sky-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-md whitespace-nowrap"
               >
-                <Phone className="w-4 h-4 fill-current" />
-                <span>Appeler le {entreprise.telephone.display}</span>
+                <Phone className="w-4 h-4 fill-current shrink-0" />
+                <span>Appeler le <strong className="font-bold">{entreprise.telephone.display}</strong></span>
               </a>
               <a
                 href="#devis-sobre"

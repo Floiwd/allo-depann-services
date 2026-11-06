@@ -144,10 +144,10 @@ export default function FormulaireDevis({
             </p>
             <a
               href={entreprise.telephone.href}
-              className="theme-btn-call inline-flex items-center gap-2 px-6 py-3 text-sm font-bold shadow-md cursor-pointer"
+              className="theme-btn-call inline-flex items-center gap-2 px-6 py-3 text-sm font-bold shadow-md cursor-pointer whitespace-nowrap"
             >
-              <Phone className="w-4 h-4 fill-current" />
-              <span>Appeler directement le {entreprise.telephone.display}</span>
+              <Phone className="w-4 h-4 fill-current shrink-0" />
+              <span>Appeler directement le <strong className="font-extrabold">{entreprise.telephone.display}</strong></span>
             </a>
           </div>
         </div>
@@ -178,7 +178,7 @@ export default function FormulaireDevis({
               <div className="flex-1">
                 <p className="font-semibold">{errorMsg}</p>
                 <p className="mt-0.5 text-[11px] text-red-700 dark:text-red-300">
-                  En cas de doute, joignez directement le {entreprise.telephone.display}.
+                  En cas de doute, joignez directement le <strong className="whitespace-nowrap font-bold">{entreprise.telephone.display}</strong>.
                 </p>
               </div>
             </div>

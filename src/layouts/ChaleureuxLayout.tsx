@@ -36,10 +36,10 @@ export default function ChaleureuxLayout() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-1">
                 <a
                   href={entreprise.telephone.href}
-                  className="px-6 py-3.5 rounded-full bg-[#c2410c] hover:bg-[#9a3412] text-white font-bold text-xs sm:text-sm shadow-md flex items-center justify-center gap-2.5 transition-all cursor-pointer"
+                  className="px-6 py-3.5 rounded-full bg-[#c2410c] hover:bg-[#9a3412] text-white font-bold text-xs sm:text-sm shadow-md flex items-center justify-center gap-2.5 transition-all cursor-pointer whitespace-nowrap"
                 >
-                  <Phone className="w-4 h-4 fill-current" />
-                  <span>Appeler au {entreprise.telephone.display}</span>
+                  <Phone className="w-4 h-4 fill-current shrink-0" />
+                  <span>Appeler au <strong className="font-extrabold">{entreprise.telephone.display}</strong></span>
                 </a>
 
                 <a

@@ -35,11 +35,11 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-lg mx-auto mb-10">
           <a
             href={entreprise.telephone.href}
-            className="theme-btn-call flex items-center justify-center gap-3 px-6 py-4 text-base font-bold shadow-lg text-center"
+            className="theme-btn-call flex items-center justify-center gap-3 px-6 py-4 text-base font-bold shadow-lg text-center whitespace-nowrap"
             aria-label={`Appeler immédiatement le dépanneur au ${entreprise.telephone.display}`}
           >
             <Phone className="w-5 h-5 fill-current shrink-0" />
-            <span>Appeler le {entreprise.telephone.display}</span>
+            <span>Appeler le <strong className="font-extrabold">{entreprise.telephone.display}</strong></span>
           </a>
 
           <a

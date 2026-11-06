@@ -51,10 +51,10 @@ export default function UrgenceLayout() {
 
                 <a
                   href={entreprise.telephone.href}
-                  className="w-full flex items-center justify-center gap-3 py-3.5 px-4 rounded-lg bg-[var(--bg-surface)] text-[var(--text-main)] text-xl font-black hover:opacity-95 active:scale-98 transition-all shadow-sm text-center"
+                  className="w-full flex items-center justify-center gap-3 py-3.5 px-4 rounded-lg bg-[var(--bg-surface)] text-[var(--text-main)] text-xl font-black hover:opacity-95 active:scale-98 transition-all shadow-sm text-center whitespace-nowrap"
                 >
                   <Phone className="w-5 h-5 fill-current shrink-0 text-[var(--accent-call)]" />
-                  <span>{entreprise.telephone.display}</span>
+                  <span className="whitespace-nowrap tracking-wide">{entreprise.telephone.display}</span>
                 </a>
 
                 <p className="text-[10px] opacity-80 text-center">
@@ -145,10 +145,10 @@ export default function UrgenceLayout() {
             </div>
             <a
               href={entreprise.telephone.href}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--text-main)] hover:underline"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--text-main)] hover:underline whitespace-nowrap"
             >
-              <span>Autre panne ? Appelez le {entreprise.telephone.display}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span>Autre panne ? Appelez le <strong className="font-extrabold">{entreprise.telephone.display}</strong></span>
+              <ArrowRight className="w-3.5 h-3.5 shrink-0" />
             </a>
           </div>
 

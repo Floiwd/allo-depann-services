@@ -46,10 +46,10 @@ export default function SombreLayout() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 max-w-md mx-auto">
             <a
               href={entreprise.telephone.href}
-              className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#c59b27] hover:from-[#e2c26e] hover:to-[#d4af37] text-neutral-950 font-black text-sm sm:text-base shadow-lg shadow-[#d4af37]/20 transition-all cursor-pointer"
+              className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#c59b27] hover:from-[#e2c26e] hover:to-[#d4af37] text-neutral-950 font-black text-sm sm:text-base shadow-lg shadow-[#d4af37]/20 transition-all cursor-pointer whitespace-nowrap"
             >
-              <Phone className="w-4 h-4 fill-current" />
-              <span>Ligne Directe : {entreprise.telephone.display}</span>
+              <Phone className="w-4 h-4 fill-current shrink-0" />
+              <span>Ligne Directe : <strong className="font-black">{entreprise.telephone.display}</strong></span>
             </a>
 
             <a

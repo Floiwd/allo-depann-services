@@ -59,10 +59,10 @@ export default function ZoneIntervention() {
             </p>
             <a
               href={entreprise.telephone.href}
-              className="inline-flex items-center gap-2 px-4 py-2 theme-btn-call text-xs font-bold shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 theme-btn-call text-xs font-bold shadow-sm whitespace-nowrap"
             >
-              <Phone className="w-3.5 h-3.5 fill-current" />
-              <span>Demander confirmation au {entreprise.telephone.display}</span>
+              <Phone className="w-3.5 h-3.5 fill-current shrink-0" />
+              <span>Demander confirmation au <strong className="font-bold">{entreprise.telephone.display}</strong></span>
             </a>
           </div>
         )}
