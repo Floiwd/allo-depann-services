@@ -8,6 +8,7 @@ import FormulaireDevis from "@/components/FormulaireDevis";
 import ProcessEtapes from "@/components/ProcessEtapes";
 import ZoneIntervention from "@/components/ZoneIntervention";
 import IllustrativeImage from "@/components/IllustrativeImage";
+import AvisClients from "@/components/AvisClients";
 
 export default function ChaleureuxLayout() {
   const [selectedSituation, setSelectedSituation] = useState(entreprise.services[0]?.titre || "Porte claquée");
@@ -160,7 +161,10 @@ export default function ChaleureuxLayout() {
       {/* 4. FOCUS ZONE LOCALE */}
       <ZoneIntervention />
 
-      {/* 5. FORMULAIRE AMICAL ET ARRONDIS */}
+      {/* 5. AVIS CLIENTS (ILLUSTRATIFS) */}
+      <AvisClients />
+
+      {/* 6. FORMULAIRE AMICAL ET ARRONDIS */}
       <section id="devis-chaleureux" className="py-8 sm:py-10 bg-white border-t border-[#ebdcd0]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-6">

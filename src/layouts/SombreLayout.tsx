@@ -8,6 +8,7 @@ import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";
 import ProcessEtapes from "@/components/ProcessEtapes";
 import ZoneIntervention from "@/components/ZoneIntervention";
+import AvisClients from "@/components/AvisClients";
 
 export default function SombreLayout() {
   const [selectedSituation, setSelectedSituation] = useState(entreprise.services[0]?.titre || "Porte claquée");
@@ -177,7 +178,10 @@ export default function SombreLayout() {
       {/* 4. ZONE D'INTERVENTION */}
       <ZoneIntervention />
 
-      {/* 5. FORMULAIRE EN COFFRET SOMBRE & OR */}
+      {/* 5. AVIS CLIENTS (ILLUSTRATIFS) */}
+      <AvisClients />
+
+      {/* 6. FORMULAIRE EN COFFRET SOMBRE & OR */}
       <section id="devis-sombre" className="py-8 sm:py-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-5">

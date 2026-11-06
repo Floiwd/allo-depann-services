@@ -36,29 +36,23 @@ Ce document recense l'ensemble des informations manquantes nécessaires pour fin
 ---
 
 ## 5. Photographies Réelles des Chantiers
-- [ ] **Remplacement des schémas temporaires** :
-  - La maquette intègre 16 schémas techniques vectoriels neutres dans `/public/placeholders/`.
-  - *À fournir* (idéalement 1 à 3 photos haute définition par prestation) :
-    1. Charpente (pose ou rénovation de fermettes/bois)
-    2. Couverture tuiles / zinc / bac acier
-    3. Zinguerie (gouttières, chéneaux, abergements de cheminée)
-    4. Étanchéité (toit plat, solins)
-    5. Démoussage (avant/après nettoyage et traitement hydrofuge)
-    6. Habillage dessous de toit (rives, frisette PVC/alu)
-    7. Fenêtres de toit (pose de Velux)
-    8. Ramonage (conduits et poêles)
-  - *4 paires Avant / Après* pour la galerie interactive.
+- [ ] **Remplacement des photos illustratives par de vraies photos d'intervention** :
+  - La maquette intègre actuellement 7 photographies illustratives réalistes dans `/public/images/illustratives/`.
+  - *À fournir* : 3 à 7 vraies photos d'interventions de l'artisan (portes débloquées, cylindres de haute sécurité posés, serrure multipoints, véhicule d'intervention).
 
 ---
 
 ## 6. Avis Clients & Témoignages
-- [ ] **Avis certifiés à mettre en avant** :
-  - *Donnée vérifiée* : 5/5 sur PagesJaunes (4 avis certifiés, dernier avis en juin 2023).
-  - *À confirmer* : texte exact des avis que l'artisan souhaite citer avec l'accord des clients, ou lien vers d'autres plateformes (Google My Business si existant).
+- [ ] **Obtenir 3 à 5 avis réels avec l'accord du client, le lien d'avis Google de l'entreprise et la note Google réelle.**
+  - *Actuel* : Gabarits illustratifs neutres (sans note chiffrée, sans avis inventé, badge « Exemple illustratif » automatique via `src/data/avis.ts`).
+  - *À fournir dès que possible* :
+    - 3 à 5 avis clients réels avec l'accord écrit préalable du client pour publication sur le site.
+    - Le lien d'avis Google My Business pour alimenter le bouton « Laisser un avis ».
+    - La note moyenne Google vérifiable (le cas échéant).
 
 ---
 
 ## 7. Nom de Domaine Officiel
 - [ ] **Nom de domaine souhaité pour le déploiement** :
-  - *Suggestions* : `tb-toitures-nancy.fr`, `tb-toitures.fr`, `tbtoitures-nancy.fr`
-  - *À configurer* dans le dashboard Vercel une fois le domaine réservé.
+  - *Suggestions* : `allo-depann-services.fr`, `allodepannservices.fr`
+  - *Déploiement actuel* : `https://allo-depann-services.vercel.app`

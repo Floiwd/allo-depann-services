@@ -77,6 +77,9 @@ export interface EntrepriseData {
   // Éléments de réassurance (uniquement des engagements vérifiés/éthiques)
   reassurance: ReassurancePoint[];
 
+  // Avis clients & lien Google Review
+  googleReviewUrl?: string;
+
   // Données légales & administratives
   legal: {
     siret: string; // // À CONFIRMER : Numéro SIRET (14 chiffres)
@@ -238,6 +241,9 @@ export const entreprise: EntrepriseData = {
       confirmed: true,
     },
   ],
+
+  // Avis clients et lien de dépôt d'avis Google (vide par défaut -> bouton masqué tant qu'il n'est pas fourni)
+  googleReviewUrl: "", // // À CONFIRMER : lien Google My Business pour laisser un avis
 
   // Données légales à compléter par le client
   legal: {

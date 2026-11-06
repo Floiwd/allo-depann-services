@@ -7,6 +7,7 @@ import { Phone, ArrowUpRight, ArrowDown } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";
 import ZoneIntervention from "@/components/ZoneIntervention";
+import AvisClients from "@/components/AvisClients";
 
 export default function ModerneLayout() {
   const [selectedSituation, setSelectedSituation] = useState(entreprise.services[0]?.titre || "Porte claquée");
@@ -165,7 +166,10 @@ export default function ModerneLayout() {
       {/* 4. ZONE D'INTERVENTION */}
       <ZoneIntervention />
 
-      {/* 5. FORMULAIRE MINIMALISTE */}
+      {/* 5. AVIS CLIENTS (ILLUSTRATIFS) */}
+      <AvisClients />
+
+      {/* 6. FORMULAIRE MINIMALISTE */}
       <section id="devis-moderne" className="py-8 sm:py-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <div className="mb-6 pb-3 border-b border-neutral-200 dark:border-neutral-800 text-center">

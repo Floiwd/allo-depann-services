@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Phone, Send, CheckCircle2, AlertCircle, Camera, Loader2, ArrowRight } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
+import { AvisCourtDevis } from "@/components/AvisClients";
 
 interface FormulaireDevisProps {
   initialSituation?: string;
@@ -151,10 +152,12 @@ export default function FormulaireDevis({
           </div>
         </div>
       ) : (
-        <form
-          onSubmit={handleSubmit}
-          className="theme-surface p-5 sm:p-6 border border-[var(--border-subtle)] space-y-4"
-        >
+        <>
+          <AvisCourtDevis />
+          <form
+            onSubmit={handleSubmit}
+            className="theme-surface p-5 sm:p-6 border border-[var(--border-subtle)] space-y-4"
+          >
           {/* Honeypot */}
           <div className="hidden" aria-hidden="true">
             <label htmlFor="website">Ne pas remplir ce champ si vous êtes humain</label>
@@ -419,6 +422,7 @@ export default function FormulaireDevis({
             )}
           </button>
         </form>
+        </>
       )}
     </div>
   );

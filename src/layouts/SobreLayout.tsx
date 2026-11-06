@@ -7,6 +7,7 @@ import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";
 import ProcessEtapes from "@/components/ProcessEtapes";
 import ZoneIntervention from "@/components/ZoneIntervention";
+import AvisClients from "@/components/AvisClients";
 import IllustrativeImage from "@/components/IllustrativeImage";
 
 export default function SobreLayout() {
@@ -171,7 +172,10 @@ export default function SobreLayout() {
       {/* 5. ZONE D'INTERVENTION */}
       <ZoneIntervention />
 
-      {/* 6. FORMULAIRE ENCADRÉ AVEC CADRE JURIDIQUE DE CONFIANCE */}
+      {/* 6. AVIS CLIENTS (ILLUSTRATIFS) */}
+      <AvisClients />
+
+      {/* 7. FORMULAIRE ENCADRÉ AVEC CADRE JURIDIQUE DE CONFIANCE */}
       <section id="devis-sobre" className="py-8 sm:py-10 bg-white dark:bg-slate-900">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <div className="mb-4 p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-start gap-2.5">

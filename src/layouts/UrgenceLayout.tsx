@@ -7,6 +7,7 @@ import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";
 import ProcessEtapes from "@/components/ProcessEtapes";
 import ZoneIntervention from "@/components/ZoneIntervention";
+import AvisClients from "@/components/AvisClients";
 import IllustrativeImage from "@/components/IllustrativeImage";
 
 export default function UrgenceLayout() {
@@ -199,7 +200,10 @@ export default function UrgenceLayout() {
       {/* 3. Déroulement */}
       <ProcessEtapes />
 
-      {/* 4. Zone d'intervention */}
+      {/* 4. Avis clients illustratifs */}
+      <AvisClients />
+
+      {/* 5. Zone d'intervention */}
       <ZoneIntervention />
     </div>
   );
