@@ -23,25 +23,25 @@ export default function ModerneLayout() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col gap-6">
             <div className="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 pb-3">
-              <span className="font-mono text-xs uppercase tracking-widest text-neutral-500">
+              <span className="font-mono text-xs uppercase tracking-widest text-neutral-600 dark:text-neutral-300 font-semibold">
                 Studio Dépannage • {entreprise.nom}
               </span>
-              <span className="font-mono text-xs text-neutral-500">
+              <span className="font-mono text-xs text-neutral-600 dark:text-neutral-300 font-semibold">
                 {zoneAffichee}
               </span>
             </div>
 
             <h1 className="text-3xl sm:text-6xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
               Serrurerie<br />
-              <span className="font-light italic text-neutral-400 dark:text-neutral-500 lowercase">d&apos;urgence.</span>
+              <span className="font-light italic text-neutral-500 dark:text-neutral-400 lowercase">d&apos;urgence.</span>
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-2 items-end">
               <div className="md:col-span-7 space-y-3">
-                <p className="text-xs sm:text-base text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed max-w-xl">
+                <p className="text-xs sm:text-base text-neutral-700 dark:text-neutral-300 font-normal leading-relaxed max-w-xl">
                   Ouverture fine sans dégât de serrure, extraction de clé cassée, remplacement immédiat de cylindre. Devis clair avant déplacement.
                 </p>
-                <div className="flex items-center gap-4 text-xs font-mono text-neutral-500 uppercase tracking-wider">
+                <div className="flex items-center gap-4 text-xs font-mono text-neutral-600 dark:text-neutral-300 uppercase tracking-wider font-semibold">
                   <span>0% plateforme</span>
                   <span>/</span>
                   <span>100% direct</span>
@@ -83,10 +83,10 @@ export default function ModerneLayout() {
       <section className="py-8 sm:py-10 border-b border-neutral-200 dark:border-neutral-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between mb-6 pb-3 border-b border-neutral-200 dark:border-neutral-800">
-            <span className="font-mono text-xs uppercase tracking-widest text-neutral-500">
+            <span className="font-mono text-xs uppercase tracking-widest text-neutral-600 dark:text-neutral-300 font-semibold">
               01 / Cas d&apos;interventions
             </span>
-            <span className="text-xs text-neutral-500 font-mono">
+            <span className="text-xs text-neutral-600 dark:text-neutral-300 font-mono font-semibold">
               6 protocoles confirmés
             </span>
           </div>
@@ -108,21 +108,21 @@ export default function ModerneLayout() {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
+                      <span className="font-mono text-xs text-neutral-500 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors font-semibold">
                         [0{idx + 1}]
                       </span>
                       <h3 className="text-base sm:text-lg font-bold uppercase tracking-tight group-hover:translate-x-1 transition-transform">
                         {s.titre}
                       </h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1 max-w-xl leading-relaxed">
-                      {s.descriptionCourte} — <span className="italic">{s.descriptionDetaillee}</span>
+                    <p className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 mt-1 max-w-xl leading-relaxed">
+                      {s.descriptionCourte} — <span className="italic text-neutral-600 dark:text-neutral-400">{s.descriptionDetaillee}</span>
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 shrink-0 self-end md:self-center">
-                  <span className="text-xs font-mono uppercase text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
+                  <span className="text-xs font-mono uppercase text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition-colors font-semibold">
                     Sélectionner →
                   </span>
                   <a
@@ -144,7 +144,7 @@ export default function ModerneLayout() {
       <section className="py-8 sm:py-10 border-b border-neutral-200 dark:border-neutral-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="mb-6 pb-3 border-b border-neutral-200 dark:border-neutral-800">
-            <span className="font-mono text-xs uppercase tracking-widest text-neutral-500">
+            <span className="font-mono text-xs uppercase tracking-widest text-neutral-600 dark:text-neutral-300 font-semibold">
               02 / Protocole d&apos;intervention
             </span>
           </div>
@@ -152,13 +152,13 @@ export default function ModerneLayout() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {entreprise.processus.etapes.map((etape) => (
               <div key={etape.numero} className="space-y-2">
-                <span className="block text-3xl sm:text-5xl font-black font-mono tracking-tighter text-neutral-300 dark:text-neutral-700">
+                <span className="block text-3xl sm:text-5xl font-black font-mono tracking-tighter text-neutral-400 dark:text-neutral-600">
                   {etape.numero}
                 </span>
                 <h3 className="text-sm sm:text-base font-bold uppercase tracking-tight text-neutral-900 dark:text-white">
                   {etape.titre}
                 </h3>
-                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed font-normal">
                   {etape.description}
                 </p>
               </div>

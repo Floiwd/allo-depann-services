@@ -112,7 +112,7 @@ export default function MentionsLegales() {
               </p>
               <div className="p-3 bg-[var(--bg-page)] rounded-md border border-[var(--border-subtle)] space-y-1">
                 <p className="font-semibold text-[var(--text-main)]">Garanties de protection :</p>
-                <ul className="list-disc list-inside space-y-0.5 text-[var(--text-muted)]">
+                <ul className="list-disc list-inside space-y-0.5 text-[var(--text-body)]">
                   <li>Aucune donnée n&apos;est stockée dans une base de données sur ce site.</li>
                   <li>Les données ne sont ni cédées, ni louées, ni revendues à des tiers.</li>
                   <li>Aucun tracker publicitaire ni cookie tiers intrusif n&apos;est déployé sur ce site.</li>

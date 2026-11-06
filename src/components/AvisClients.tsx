@@ -105,7 +105,7 @@ export default function AvisClients() {
             {hasRealReviews ? "Avis clients certifiés Google" : "Les avis de nos clients"}
           </h2>
 
-          <p className="text-xs sm:text-sm text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[var(--text-body)] max-w-xl mx-auto leading-relaxed">
             {hasRealReviews
               ? "Témoignages authentiques déposés publiquement par nos clients sur notre fiche officielle Google Maps."
               : "Par engagement de transparence, les cartes ci-dessous présentent la structure des retours d'expérience. Les véritables témoignages certifiés seront publiés dès validation par nos clients."}
@@ -114,7 +114,7 @@ export default function AvisClients() {
 
         {/* Contrôles de défilement (flèches droite / gauche) */}
         <div className="flex items-center justify-between mb-4">
-          <div className="text-xs text-[var(--text-muted)] font-medium flex items-center gap-1.5">
+          <div className="text-xs text-[var(--text-body)] font-medium flex items-center gap-1.5">
             <span>← Glissez ou défilez horizontalement →</span>
           </div>
 
@@ -189,7 +189,7 @@ export default function AvisClients() {
                       ))}
                     </div>
 
-                    <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">
                       Avis Google vérifié
                     </span>
                   </div>
@@ -206,13 +206,13 @@ export default function AvisClients() {
                     <span className="font-bold text-[var(--text-main)]">
                       {avis.prenom} {avis.initialeNom ? `${avis.initialeNom}.` : ""}
                     </span>
-                    <span className="text-[11px] text-[var(--text-muted)] font-mono">
+                    <span className="text-[11px] text-[var(--text-body)] font-mono">
                       {avis.mois}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-[11px] text-[var(--text-muted)]">
-                    <span className="truncate max-w-[220px]">{avis.travaux}</span>
-                    <span className="font-medium text-amber-600 dark:text-amber-400">Google Maps</span>
+                  <div className="flex items-center justify-between text-[11px] text-[var(--text-body)]">
+                    <span className="truncate max-w-[220px] font-medium">{avis.travaux}</span>
+                    <span className="font-semibold text-amber-700 dark:text-amber-300">Google Maps</span>
                   </div>
                 </div>
               </article>
@@ -269,13 +269,13 @@ export function AvisCourtDevis() {
   }
 
   return (
-    <div className="p-3 rounded-lg border border-emerald-500/30 bg-emerald-50/50 dark:bg-emerald-950/20 text-xs flex items-start gap-2.5 mb-4">
+    <div className="p-3.5 rounded-lg border border-emerald-300 dark:border-emerald-600/70 bg-emerald-50 dark:bg-emerald-950/80 text-xs flex items-start gap-2.5 mb-4 shadow-xs">
       <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-      <div>
-        <p className="italic text-[var(--text-body)] line-clamp-3">
+      <div className="flex-1">
+        <p className="italic text-emerald-950 dark:text-emerald-50 leading-relaxed line-clamp-3 font-medium">
           &laquo;&nbsp;{avisVerifie.texte}&nbsp;&raquo;
         </p>
-        <p className="text-[10px] text-[var(--text-muted)] mt-1 font-semibold">
+        <p className="text-[11px] text-emerald-800 dark:text-emerald-300 mt-1 font-bold">
           — {avisVerifie.prenom} {avisVerifie.initialeNom ? `${avisVerifie.initialeNom}.` : ""} ({avisVerifie.travaux})
         </p>
       </div>

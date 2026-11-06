@@ -264,7 +264,7 @@ export default function FormulaireDevis({
               />
               <Phone className="w-4 h-4 text-[var(--text-muted)] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
             </div>
-            <p className="text-[11px] text-[var(--text-muted)] mt-1">
+            <p className="text-[11px] text-[var(--text-body)] mt-1 font-medium">
               Numéro utilisé uniquement pour vous rappeler et confirmer le tarif.
             </p>
           </div>
@@ -315,9 +315,9 @@ export default function FormulaireDevis({
           <div>
             <label
               htmlFor="email"
-              className="block text-xs font-medium text-[var(--text-muted)] mb-1"
+              className="block text-xs font-semibold text-[var(--text-main)] mb-1"
             >
-              Email (facultatif, pour recevoir la confirmation écrite)
+              Email <span className="font-normal text-[var(--text-muted)]">(facultatif, pour recevoir la confirmation écrite)</span>
             </label>
             <input
               type="email"
@@ -336,9 +336,9 @@ export default function FormulaireDevis({
           <div>
             <label
               htmlFor="message"
-              className="block text-xs font-medium text-[var(--text-muted)] mb-1"
+              className="block text-xs font-semibold text-[var(--text-main)] mb-1"
             >
-              Précisions (étage, modèle de clé ou serrure si connu...)
+              Précisions <span className="font-normal text-[var(--text-muted)]">(facultatif : étage, digicode, modèle de clé si connu)</span>
             </label>
             <input
               type="text"
@@ -396,7 +396,7 @@ export default function FormulaireDevis({
                 onChange={(e) => setConsentement(e.target.checked)}
                 className="mt-0.5 rounded border-[var(--border-strong)] text-[var(--accent-call)] focus:ring-[var(--accent-call)]"
               />
-              <span className="text-[11px] text-[var(--text-muted)] leading-tight">
+              <span className="text-[11px] text-[var(--text-body)] font-medium leading-tight">
                 J&apos;accepte d&apos;être rappelé(e) au téléphone par {entreprise.nom} pour mon dépannage.
               </span>
             </label>

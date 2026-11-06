@@ -36,7 +36,7 @@ export default function SobreLayout() {
               {entreprise.nom} assure un service rigoureux de dépannage, d&apos;ouverture de porte et de sécurisation. Devis préalable et annonce systématique du tarif avant tout déplacement.
             </p>
 
-            <div className="pt-1 text-xs text-slate-400">
+            <div className="pt-1 text-xs text-slate-300">
               Zone couverte : {zoneAffichee} • Contact direct par téléphone
             </div>
 
@@ -67,7 +67,7 @@ export default function SobreLayout() {
       <section className="py-8 sm:py-10 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-xl mx-auto mb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-sky-800 dark:text-sky-300">
               Charte de transparence
             </span>
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 dark:text-white mt-0.5">
@@ -77,31 +77,31 @@ export default function SobreLayout() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
             <div className="p-4 sm:p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 space-y-1.5">
-              <div className="w-8 h-8 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 flex items-center justify-center font-bold text-xs">
+              <div className="w-8 h-8 rounded bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 flex items-center justify-center font-bold text-xs">
                 1
               </div>
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">Prix annoncé au préalable</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
                 Aucun déplacement n&apos;est engagé sans que vous n&apos;ayez validé la méthode d&apos;ouverture et le montant estimé.
               </p>
             </div>
 
             <div className="p-4 sm:p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 space-y-1.5">
-              <div className="w-8 h-8 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 flex items-center justify-center font-bold text-xs">
+              <div className="w-8 h-8 rounded bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 flex items-center justify-center font-bold text-xs">
                 2
               </div>
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">Artisan direct, sans intermédiaire</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
                 Vous conversez immédiatement avec le dépanneur. Aucune commission de plateforme tierce n&apos;est répercutée.
               </p>
             </div>
 
             <div className="p-4 sm:p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 space-y-1.5">
-              <div className="w-8 h-8 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 flex items-center justify-center font-bold text-xs">
+              <div className="w-8 h-8 rounded bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 flex items-center justify-center font-bold text-xs">
                 3
               </div>
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">Facturation conforme aux assurances</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
                 Délivrance systématique d&apos;une facture détaillée mentionnant le déplacement, la main d&apos;œuvre et le matériel.
               </p>
             </div>
@@ -113,13 +113,13 @@ export default function SobreLayout() {
       <section className="py-8 sm:py-10 bg-slate-100/60 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="mb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
               Catalogue technique
             </span>
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 dark:text-white mt-0.5">
               Fiches d&apos;interventions certifiées
             </h2>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
               Nos méthodes privilégient toujours l&apos;ouverture non destructive pour préserver votre serrure.
             </p>
           </div>
@@ -137,12 +137,12 @@ export default function SobreLayout() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">{s.titre}</h3>
-                      <span className="text-[10px] font-mono text-slate-500 uppercase bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-mono text-slate-700 dark:text-slate-200 uppercase bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded font-semibold">
                         Serrurerie
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{s.descriptionCourte}</p>
-                    <p className="text-xs text-slate-500 italic mt-0.5">{s.descriptionDetaillee}</p>
+                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-normal">{s.descriptionCourte}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 italic mt-0.5">{s.descriptionDetaillee}</p>
                   </div>
                 </div>
 
@@ -153,13 +153,13 @@ export default function SobreLayout() {
                       const el = document.getElementById("devis-sobre");
                       el?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="flex-1 md:flex-none px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 cursor-pointer transition-colors"
+                    className="flex-1 md:flex-none px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 cursor-pointer transition-colors"
                   >
                     Sélectionner
                   </button>
                   <a
                     href={entreprise.telephone.href}
-                    className="px-4 py-2.5 rounded-lg text-xs font-semibold bg-sky-700 hover:bg-sky-600 text-white flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
+                    className="px-4 py-2.5 rounded-lg text-xs font-semibold bg-sky-700 hover:bg-sky-600 text-white flex items-center justify-center gap-1.5 cursor-pointer transition-colors shadow-xs"
                   >
                     <Phone className="w-3.5 h-3.5 fill-current" />
                     <span>Appeler</span>
@@ -181,12 +181,12 @@ export default function SobreLayout() {
       <AvisClients />
 
       {/* 7. FORMULAIRE ENCADRÉ AVEC CADRE JURIDIQUE DE CONFIANCE */}
-      <section id="devis-sobre" className="py-8 sm:py-10 bg-white dark:bg-slate-900">
+      <section id="devis-sobre" className="py-8 sm:py-10 bg-slate-50/50 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <div className="mb-4 p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-start gap-2.5">
+          <div className="mb-4 p-3.5 rounded-lg bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex items-start gap-2.5 shadow-xs">
             <BookOpen className="w-4 h-4 text-sky-700 dark:text-sky-400 shrink-0 mt-0.5" />
-            <div className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              <strong className="text-slate-900 dark:text-white">Engagement de clarté préalable :</strong> En soumettant ce formulaire, vous recevrez une estimation claire par téléphone avant tout déplacement physique du serrurier.
+            <div className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
+              <strong className="text-slate-950 dark:text-white font-bold">Engagement de clarté préalable :</strong> En soumettant ce formulaire, vous recevrez une estimation claire par téléphone avant tout déplacement physique du serrurier.
             </div>
           </div>
 
