@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { Phone, ArrowRight, CheckCircle2, ShieldCheck, Clock, ArrowDown } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";

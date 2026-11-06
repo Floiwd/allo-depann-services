@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import { Phone, ArrowRight, ShieldCheck, FileCheck, CheckCircle2, Scale, BookOpen, Clock } from "lucide-react";
+import { Phone, Scale, BookOpen } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";
 import ProcessEtapes from "@/components/ProcessEtapes";

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, Clock, ArrowRight, Copy, Check } from "lucide-react";
+import { Clock, ArrowRight, Copy, Check } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 
 export default function Header() {

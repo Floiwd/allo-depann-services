@@ -1,21 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import { Phone, HeartHandshake, CheckCircle2, MapPin, ArrowRight, Smile } from "lucide-react";
+import { Phone, HeartHandshake, CheckCircle2, ArrowRight } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 import FormulaireDevis from "@/components/FormulaireDevis";
-import ProcessEtapes from "@/components/ProcessEtapes";
 import ZoneIntervention from "@/components/ZoneIntervention";
 import IllustrativeImage from "@/components/IllustrativeImage";
 import AvisClients from "@/components/AvisClients";
 
 export default function ChaleureuxLayout() {
   const [selectedSituation, setSelectedSituation] = useState(entreprise.services[0]?.titre || "Porte claquée");
-
-  const zoneAffichee = entreprise.localisation.isZoneConfirmee
-    ? entreprise.localisation.zoneLibelle
-    : "Secteur d'intervention en cours de confirmation";
 
   return (
     <div className="bg-[#fdfbf7] text-[#2b211a] space-y-0 selection:bg-[#c2410c] selection:text-white">

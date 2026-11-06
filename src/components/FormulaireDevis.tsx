@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Phone, Send, CheckCircle2, AlertCircle, Camera, Loader2, ArrowRight } from "lucide-react";
 import { entreprise } from "@/data/entreprise";
 import { AvisCourtDevis } from "@/components/AvisClients";
@@ -34,11 +34,11 @@ export default function FormulaireDevis({
   const [success, setSuccess] = useState(false);
   const [successInfo, setSuccessInfo] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (initialSituation) {
-      setSituation(initialSituation);
-    }
-  }, [initialSituation]);
+  const [prevInitial, setPrevInitial] = useState(initialSituation);
+  if (initialSituation && initialSituation !== prevInitial) {
+    setPrevInitial(initialSituation);
+    setSituation(initialSituation);
+  }
 
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

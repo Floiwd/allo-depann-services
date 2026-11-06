@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import IllustrativeImage from "@/components/IllustrativeImage";
 import { Phone, ArrowUpRight, ArrowDown } from "lucide-react";
 import { entreprise } from "@/data/entreprise";

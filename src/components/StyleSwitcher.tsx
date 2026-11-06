@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { siteConfig, ThemeId } from "@/config/site";
+import { siteConfig } from "@/config/site";
 import { useTheme } from "@/context/ThemeContext";
 import { Palette, Check, X, Copy, CheckCheck, SlidersHorizontal, Sparkles } from "lucide-react";
 
