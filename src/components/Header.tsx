@@ -36,8 +36,8 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Navigation sobre */}
-        <nav className="flex items-center gap-6 text-xs font-semibold text-[var(--text-body)]">
+        {/* Navigation desktop (visible à partir de 1024px pour préserver l'espace tablette) */}
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-xs font-semibold text-[var(--text-body)]">
           <a
             href="#urgences"
             className="hover:text-[var(--text-main)] transition-colors"

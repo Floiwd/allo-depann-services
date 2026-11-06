@@ -29,9 +29,8 @@ async function runAudit() {
 
   console.log("=== DÉBUT AUDIT MULTI-APPAREILS PLAYWRIGHT ===");
 
-  // Tester sur le build de production local ou déployé
-  // On teste la page principale
-  const targetUrl = "https://allo-depann-services.vercel.app";
+  // Tester sur le serveur local
+  const targetUrl = process.env.TEST_URL || "http://localhost:3008";
   console.log(`URL testée : ${targetUrl}\n`);
 
   const results = [];
