@@ -17,8 +17,8 @@ export default function ChaleureuxLayout() {
       {/* 1. HERO ARTISANAL CHALEUREUX & ARRONDIS */}
       <section className="pt-6 sm:pt-8 pb-8 sm:pb-10 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-[#f7efe4] rounded-3xl p-6 sm:p-10 border border-[#ebdcd0] relative overflow-hidden shadow-xs">
-            <div className="max-w-2xl space-y-4 sm:space-y-5">
+          <div className="bg-[#f7efe4] rounded-3xl p-6 sm:p-10 border border-[#ebdcd0] relative overflow-hidden shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#fed7aa] text-[#9a3412] text-xs font-bold shadow-xs">
                 <HeartHandshake className="w-4 h-4 text-[#c2410c]" />
                 <span>Artisan serrurier de proximité • Dépannage sans stress</span>
@@ -64,6 +64,10 @@ export default function ChaleureuxLayout() {
                   Facture claire
                 </span>
               </div>
+            </div>
+
+            <div className="lg:col-span-5 relative w-full h-56 sm:h-64 lg:h-72 rounded-2xl overflow-hidden border border-[#ebdcd0] shadow-xs bg-white">
+              <IllustrativeImage imageId="hero" className="w-full h-full" priority />
             </div>
           </div>
         </div>

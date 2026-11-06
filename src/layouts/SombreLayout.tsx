@@ -59,6 +59,11 @@ export default function SombreLayout() {
               Demander une intervention
             </a>
           </div>
+
+          {/* Visuel Hero Doré */}
+          <div className="relative max-w-3xl mx-auto h-48 sm:h-64 rounded-2xl overflow-hidden border border-[#d4af37]/30 shadow-2xl mt-6 bg-[#13151f]">
+            <IllustrativeImage imageId="hero" className="w-full h-full" priority />
+          </div>
         </div>
       </section>
 

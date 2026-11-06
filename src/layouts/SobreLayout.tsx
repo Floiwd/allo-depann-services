@@ -21,38 +21,44 @@ export default function SobreLayout() {
       
       {/* 1. HERO INSTITUTIONNEL & FOND BLEU NUIT */}
       <section className="bg-slate-900 text-white py-10 sm:py-14 border-b border-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-sky-400 text-xs font-semibold">
-            <Scale className="w-3.5 h-3.5" />
-            <span>Artisanat certifié • Pratiques déontologiques strictes</span>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-sky-400 text-xs font-semibold">
+              <Scale className="w-3.5 h-3.5" />
+              <span>Artisanat certifié • Pratiques déontologiques strictes</span>
+            </div>
+
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-white leading-tight">
+              Interventions de Serrurerie &amp; Dépannage
+            </h1>
+
+            <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed">
+              {entreprise.nom} assure un service rigoureux de dépannage, d&apos;ouverture de porte et de sécurisation. Devis préalable et annonce systématique du tarif avant tout déplacement.
+            </p>
+
+            <div className="pt-1 text-xs text-slate-400">
+              Zone couverte : {zoneAffichee} • Contact direct par téléphone
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+              <a
+                href={entreprise.telephone.href}
+                className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3 rounded-md bg-sky-600 hover:bg-sky-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-md"
+              >
+                <Phone className="w-4 h-4 fill-current" />
+                <span>Appeler le {entreprise.telephone.display}</span>
+              </a>
+              <a
+                href="#devis-sobre"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 transition-all"
+              >
+                <span>Demande d&apos;intervention</span>
+              </a>
+            </div>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-white leading-tight">
-            Interventions de Serrurerie &amp; Dépannage
-          </h1>
-
-          <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
-            {entreprise.nom} assure un service rigoureux de dépannage, d&apos;ouverture de porte et de sécurisation. Devis préalable et annonce systématique du tarif avant tout déplacement.
-          </p>
-
-          <div className="pt-1 text-xs text-slate-400">
-            Zone couverte : {zoneAffichee} • Contact direct par téléphone
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 max-w-md mx-auto">
-            <a
-              href={entreprise.telephone.href}
-              className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3 rounded-md bg-sky-600 hover:bg-sky-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-md"
-            >
-              <Phone className="w-4 h-4 fill-current" />
-              <span>Appeler le {entreprise.telephone.display}</span>
-            </a>
-            <a
-              href="#devis-sobre"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 transition-all"
-            >
-              <span>Demande d&apos;intervention</span>
-            </a>
+          <div className="lg:col-span-5 relative w-full h-56 sm:h-64 lg:h-72 rounded-xl overflow-hidden border border-slate-700 shadow-lg bg-slate-800">
+            <IllustrativeImage imageId="hero" className="w-full h-full" priority />
           </div>
         </div>
       </section>

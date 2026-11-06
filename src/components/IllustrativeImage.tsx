@@ -19,7 +19,16 @@ export default function IllustrativeImage({
   fill = true,
   priority = false,
 }: IllustrativeImageProps) {
-  const imgData: SiteImage | undefined = siteImages[imageId];
+  let imgData: SiteImage | undefined = siteImages[imageId];
+
+  if (!imgData) {
+    const matchedKey = Object.keys(siteImages).find(
+      (k) => imageId.includes(k) || k.includes(imageId)
+    );
+    if (matchedKey) {
+      imgData = siteImages[matchedKey];
+    }
+  }
 
   if (!imgData) {
     return null;

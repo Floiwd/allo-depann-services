@@ -62,6 +62,11 @@ export default function UrgenceLayout() {
                 </p>
               </div>
 
+              {/* Visuel de réassurance artisan */}
+              <div className="relative w-full h-36 sm:h-44 rounded-xl overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-surface)] shadow-xs">
+                <IllustrativeImage imageId="hero" className="w-full h-full" priority />
+              </div>
+
               {/* Pastilles de situations rapides */}
               <div className="space-y-1.5 pt-1">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)]">

@@ -70,6 +70,11 @@ export default function ModerneLayout() {
                 </a>
               </div>
             </div>
+
+            {/* Visuel Hero Illustratif */}
+            <div className="relative w-full h-56 sm:h-72 md:h-80 rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 mt-2 bg-neutral-100 dark:bg-neutral-900">
+              <IllustrativeImage imageId="hero" className="w-full h-full" priority />
+            </div>
           </div>
         </div>
       </section>
